@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
-    public class Program
+    public class Game
     {
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
@@ -30,8 +30,9 @@ namespace PoliticianCrusade
             var cane = new Cane(57, 34);
             var bag = new Bag(68, 35);
             var umbrella = new Umbrella(81, 34);
+            var gun = new Gun(92, 35);
 
-            var objects = new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1, politician2, politician3, money, cane, bag, umbrella};
+            var objects = new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1, politician2, politician3, money, cane, bag, umbrella, gun};
 
             foreach (var obj in objects)
             {

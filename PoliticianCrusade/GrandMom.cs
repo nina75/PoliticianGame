@@ -33,7 +33,7 @@ namespace PoliticianCrusade
                 }
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
-                    if (true) // constrain
+                    if (base.CoordX < Game.MaxWidth - 4) 
                     {
                         base.ClearImg();
                         base.CoordX ++;
@@ -43,7 +43,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.LeftArrow)
                 {
-                    if (true) // constrain
+                    if (base.CoordX > 0) 
                     {
                         base.ClearImg();
                         base.CoordX--;
@@ -52,7 +52,7 @@ namespace PoliticianCrusade
                 }
                 if (userInput.Key == ConsoleKey.UpArrow)
                 {
-                    if (true) // constrain
+                    if (base.CoordY > 0) 
                     {
                         base.ClearImg();
                         base.CoordY--;
@@ -62,7 +62,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.DownArrow)
                 {
-                    if (true) // constrain
+                    if (base.CoordY < Game.MaxHeight - 11) // constrain
                     {
                         base.ClearImg();
                         base.CoordY++;
