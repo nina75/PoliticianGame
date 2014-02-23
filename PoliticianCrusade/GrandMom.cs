@@ -62,7 +62,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.DownArrow)
                 {
-                    if (base.CoordY < Game.MaxHeight - 11) // constrain
+                    if (base.CoordY < Game.MaxHeight - 11) 
                     {
                         base.ClearImg();
                         base.CoordY++;

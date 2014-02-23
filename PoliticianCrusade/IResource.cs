@@ -8,5 +8,6 @@ namespace PoliticianCrusade
 {
     public interface IResource
     {
+        int Quantity { get; }
     }
 }
