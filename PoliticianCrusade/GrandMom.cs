@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
-    public class GrandMom : Character, IMovable
+    public class GrandMom : Character
     {
         public GrandMom(int x, int y) : base(x, y)
         {
@@ -14,6 +14,13 @@ namespace PoliticianCrusade
         public GrandMom()
         {
         }
+
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            base.RenderImg();
+        }
+
 
         public void Move()
         {
@@ -69,7 +76,11 @@ namespace PoliticianCrusade
 
         public override char[,] GetImage()
         {
-            return new char[,] { { ' ', 'o', 'o', ' ' }, { '(', ')', '(', ')' }, { '(', ' ', ' ', ')' } };
+            return new char[,] {
+                                 { '@', '@', '@', '@'}, 
+                                 { ' ', 'o', 'o' ,' '},
+                                 { '(', ' ', ' ', ')'}
+                               };
         }
          
 

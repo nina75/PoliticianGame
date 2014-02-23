@@ -26,7 +26,7 @@ namespace PoliticianCrusade
             return new char[,] { { '*' } };
         }
 
-        public void RenderImg()
+        public virtual void RenderImg()
         {
             Console.SetCursorPosition(this.CoordX, this.CoordY);
             for (int i = 0; i < this.GetImage().GetLength(0); i++)

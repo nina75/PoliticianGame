@@ -10,6 +10,7 @@ namespace PoliticianCrusade
     {
         public const int RowSteps = 11;
         public const int ColSteps = 2;
+        public const int SleepTime = 50;
         public Politician(int x, int y) : base(x, y)
         {
         }
@@ -23,13 +24,17 @@ namespace PoliticianCrusade
                                };
         }
 
-
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            base.RenderImg();
+        }
         public void Move(int startX, int startY)
         {
             base.ClearImg();
             base.CoordX++;
             base.RenderImg();
-            System.Threading.Thread.Sleep(50);
+            System.Threading.Thread.Sleep(SleepTime);
 
             if (base.CoordX == Console.WindowWidth - 1)
             {
@@ -37,13 +42,20 @@ namespace PoliticianCrusade
                  base.CoordX = 0;
             }
 
-            //if ( base.CoordX > startX && base.CoordY == startY + ColSteps)
-            //{
-            //    base.ClearImg();
-            //    base.CoordX--;
-            //    base.RenderImg();
-            //    System.Threading.Thread.Sleep(200);
-            //}
+        }
+
+        public void MoveBack(int startX, int startY)
+        {
+            base.ClearImg();
+            base.CoordX--;
+            base.RenderImg();
+            System.Threading.Thread.Sleep(SleepTime);
+
+            if (base.CoordX == 2)
+            {
+                base.ClearImg();
+                base.CoordX = Console.WindowWidth - 1;
+            }
 
         }
 

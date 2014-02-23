@@ -45,7 +45,7 @@
     <Compile Include="BGMom.cs" />
     <Compile Include="Cane.cs" />
     <Compile Include="Character.cs" />
-    <Compile Include="ConsoleRenderer.cs" />
+    <Compile Include="DrawScreen.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Garden.cs" />

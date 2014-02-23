@@ -8,6 +8,25 @@ namespace PoliticianCrusade
 {
     public class Umbrella : StaticObject, IResource
     {
-         
+        public Umbrella(int x, int y) : base(x, y)
+        {
+        }
+        public override char[,] GetImage()
+        {
+            return new char[,] { 
+                                 { ' ', '_', ' ' } ,
+                                 { ' ', '|' , ' '} ,
+                                 { '_', '_', '_'} ,
+                                 { '\\', '|', '/'} ,
+                                 { ' ', '|' , ' '} ,
+                                 
+                               };
+        }
+
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            base.RenderImg();
+        }  
     }
 }

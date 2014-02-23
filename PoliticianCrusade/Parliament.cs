@@ -24,5 +24,11 @@ namespace PoliticianCrusade
                                  { ' ', '|', '_', '_', '_', '_', '_', '_','_', '_', '_', '_', '_', '_', '_', '_', '_','|', ' '}, 
                                };
         }
+
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
+            base.RenderImg();
+        }
     }
 }

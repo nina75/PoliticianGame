@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
-    public class BGMom : Character, IMovable
+    public class BGMom : Character
     {
        
 

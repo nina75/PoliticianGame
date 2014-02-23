@@ -59,5 +59,11 @@ namespace PoliticianCrusade
             }
 
         }
+
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
+            base.RenderImg();
+        }
     }
 }
