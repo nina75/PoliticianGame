@@ -5,8 +5,11 @@ namespace PoliticianCrusade
 {
     public class Money : StaticObject
     {
-        public Money(int x, int y) 
-                  : base(x, y)
+        private static int xCoord = 45;
+        private static int yCoord = 35;
+
+        public Money() 
+                  : base(xCoord, yCoord)
         {
             this.Quantity = 0;
         }

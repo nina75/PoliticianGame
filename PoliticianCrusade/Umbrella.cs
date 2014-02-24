@@ -5,10 +5,13 @@ namespace PoliticianCrusade
 {
     public class Umbrella : StaticObject, IResource
     {
+        private static int xCoord = 81;
+        private static int yCoord = 34;
+
         public const int price = 150;
        
-        public Umbrella(int x, int y) 
-                : base(x, y)
+        public Umbrella() 
+                : base(xCoord, yCoord)
         {
             this.RemainingPower = 100;
         }

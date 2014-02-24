@@ -8,10 +8,13 @@ namespace PoliticianCrusade
 {
     public class Cane : StaticObject, IResource
     {
+        private static int xCoord = 57;
+        private static int yCoord = 34;
+
         public const int price = 100;
        
-        public Cane(int x, int y) 
-            : base(x, y)
+        public Cane() 
+            : base(xCoord, yCoord)
         {
             this.RemainingPower = 100;
         }

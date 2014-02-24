@@ -6,8 +6,12 @@ namespace PoliticianCrusade
 {
     public class Bag : StaticObject, IResource
     {
+        private static int xCoord = 68;
+        private static int yCoord = 35;
+
         public const int price = 200;
-        public Bag(int x, int y) : base(x, y)
+        public Bag()
+            : base(xCoord, yCoord)
         {
             this.RemainingPower = 100;
         }

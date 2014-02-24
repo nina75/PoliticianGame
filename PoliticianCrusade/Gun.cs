@@ -8,10 +8,13 @@ namespace PoliticianCrusade
 {
     public class Gun : StaticObject, IResource
     {
+        private static int xCoord = 92;
+        private static int yCoord = 35;
+
         public const int price = 250;
        
-        public Gun(int x, int y) 
-                : base(x, y)
+        public Gun() 
+                : base(xCoord, yCoord)
         {
             this.RemainingPower = 100;
         }

@@ -19,11 +19,11 @@ namespace PoliticianCrusade
         public GrandMom(int x, int y)
             : base(x, y)
         {
-            this.Money = new Money(45, 35);
-            this.Cane = new Cane(57, 34);
-            this.Bag = new Bag(68, 35);
-            this.Umbrella = new Umbrella(81, 34);
-            this.Gun = new Gun(92, 35);
+            this.Money = new Money();
+            this.Cane = new Cane();
+            this.Bag = new Bag();
+            this.Umbrella = new Umbrella();
+            this.Gun = new Gun();
         }
         
         public GrandMom()
