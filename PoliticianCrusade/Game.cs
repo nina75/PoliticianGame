@@ -38,12 +38,14 @@ namespace PoliticianCrusade
             Console.WriteLine("Umbrella: {0, 3} %", baba.Umbrella.RemainingPower);
             Console.WriteLine("Gun:      {0, 3} %", baba.Gun.RemainingPower);
 
-            var objects = 
+            var objects =
                 new List<GameObject>()
                 {
                     baba, parliament, garden1, garden2, policeman1, policeman2, politician1,
                     politician2, politician3, mom,walker, baba.Money, baba.Cane, baba.Bag, baba.Umbrella, baba.Gun
                 };
+
+            baba.AddEnemies(objects);
 
             foreach (var obj in objects)
             {
