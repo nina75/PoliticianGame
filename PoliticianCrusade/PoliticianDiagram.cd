@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PoliticianCrusade.Bag">
+    <Position X="1" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bag.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.BGMom">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BGMom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.Cane">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.Character">
+    <Position X="15.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.DrawScreen">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>DrawScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.Game">
+    <Position X="27.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAABAAAEBA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.GameObject">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAEAAAAAAAAAQAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.Garden">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Garden.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.GrandMom">
+    <Position X="18.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AESQAAQAAIgAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GrandMom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.Gun">
+    <Position X="9.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.Money">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Money.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.Parliament">
+    <Position X="11.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parliament.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.Policeman">
+    <Position X="15" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIAIAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Policeman.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.Politician">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAQIAIAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Politician.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.StaticObject">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StaticObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoliticianCrusade.Umbrella">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Umbrella.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PoliticianCrusade.Walker">
+    <Position X="20.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Walker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PoliticianCrusade.IMovable">
+    <Position X="29" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMovable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PoliticianCrusade.IRenderable">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRenderable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PoliticianCrusade.IResource">
+    <Position X="30.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IResource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
