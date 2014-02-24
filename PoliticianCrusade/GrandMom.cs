@@ -10,7 +10,7 @@ namespace PoliticianCrusade
     {
         public GrandMom(int x, int y) : base(x, y)
         {
-            //this.Money = 200;
+        
         }
         public GrandMom()
         {
