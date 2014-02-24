@@ -29,20 +29,19 @@ namespace PoliticianCrusade
             var politician1 = new Politician(0, 12);
             var politician2 = new Politician(97, 15);
             var politician3 = new Politician(0, 18);
-            var money = new Money(45, 35);
-            var cane = new Cane(57, 34);
-            var bag = new Bag(68, 35);
-            var umbrella = new Umbrella(81, 34);
-            var gun = new Gun(92, 35);
 
-            Console.WriteLine("Money: {0} $", money.Quantity);
-            Console.WriteLine("Cane: {0} %", cane.RemainingPower);
-            Console.WriteLine("Bag: {0} %", bag.RemainingPower);
-            Console.WriteLine("Umbrella: {0} %", umbrella.RemainingPower);
-            Console.WriteLine("Gun: {0} %", gun.RemainingPower);
+            Console.WriteLine("Money: {0} $", baba.Money.Quantity);
+            Console.WriteLine("Cane: {0} %", baba.Cane.RemainingPower);
+            Console.WriteLine("Bag: {0} %", baba.Bag.RemainingPower);
+            Console.WriteLine("Umbrella: {0} %", baba.Umbrella.RemainingPower);
+            Console.WriteLine("Gun: {0} %", baba.Gun.RemainingPower);
 
             var objects = 
-                new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1,                            politician2, politician3, money, cane, bag, umbrella, gun };
+                new List<GameObject>()
+                {
+                    baba, parliament, garden1, garden2, policeman1, policeman2, politician1,
+                    politician2, politician3, baba.Money, baba.Cane, baba.Bag, baba.Umbrella, baba.Gun
+                };
 
             foreach (var obj in objects)
             {

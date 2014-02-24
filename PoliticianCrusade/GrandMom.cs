@@ -6,9 +6,24 @@ namespace PoliticianCrusade
 {
     public class GrandMom : Character
     {
-        public GrandMom(int x, int y) 
+        public Money Money { get; private set; }
+
+        public Cane Cane { get; private set; }
+
+        public Bag Bag { get; private set; }
+
+        public Umbrella Umbrella { get; private set; }
+
+        public Gun Gun { get; private set; }
+
+        public GrandMom(int x, int y)
             : base(x, y)
         {
+            this.Money = new Money(45, 35);
+            this.Cane = new Cane(57, 34);
+            this.Bag = new Bag(68, 35);
+            this.Umbrella = new Umbrella(81, 34);
+            this.Gun = new Gun(92, 35);
         }
         
         public GrandMom()
