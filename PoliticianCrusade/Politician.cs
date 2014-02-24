@@ -6,7 +6,7 @@ namespace PoliticianCrusade
     {
         public const int RowSteps = 11;
         public const int ColSteps = 2;
-        public const int SleepTime = 50;
+        public const int SleepTime = 25;
 
         public Politician(int x, int y)
             : base(x, y)
@@ -31,6 +31,11 @@ namespace PoliticianCrusade
 
         public void Move(int startX, int startY)
         {
+            if (isAlive == false)
+            {
+                return;
+            }
+
             base.ClearImg();
             base.CoordX++;
             base.RenderImg();
@@ -45,6 +50,11 @@ namespace PoliticianCrusade
 
         public void MoveBack(int startX, int startY)
         {
+            if (isAlive == false)
+            {
+                return;
+            }
+
             base.ClearImg();
             base.CoordX--;
             base.RenderImg();

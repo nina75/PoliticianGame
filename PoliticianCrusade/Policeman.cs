@@ -26,12 +26,17 @@ namespace PoliticianCrusade
 
         public void Move(int startX, int startY)
         {
+            if (isAlive == false)
+            {
+                return;
+            }
+
             if (base.CoordX < startX + RowSteps && base.CoordY == startY)
             {
                 base.ClearImg();
                 base.CoordX++;
                 base.RenderImg();
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(25);
             }
 
             if (base.CoordX == startX + RowSteps && base.CoordY < startY + ColSteps)
@@ -39,7 +44,7 @@ namespace PoliticianCrusade
                 base.ClearImg();
                 base.CoordY++;
                 base.RenderImg();
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(25);
             }
 
             if (base.CoordX > startX && base.CoordY == startY + ColSteps)
@@ -47,7 +52,7 @@ namespace PoliticianCrusade
                 base.ClearImg();
                 base.CoordX--;
                 base.RenderImg();
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(25);
             }
 
             if (base.CoordX == startX && base.CoordY >= startY)
@@ -55,7 +60,7 @@ namespace PoliticianCrusade
                 base.ClearImg();
                 base.CoordY--;
                 base.RenderImg();
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(25);
             }
 
         }

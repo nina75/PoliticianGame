@@ -8,13 +8,13 @@ namespace PoliticianCrusade
         private static int xCoord = 45;
         private static int yCoord = 35;
 
-        public Money() 
-                  : base(xCoord, yCoord)
+        public Money()
+            : base(xCoord, yCoord)
         {
             this.Quantity = 0;
         }
 
-        public int Quantity { get; protected set; }
+        public int Quantity { get; set; }
 
         public override char[,] GetImage()
         {

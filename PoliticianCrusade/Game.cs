@@ -29,6 +29,8 @@ namespace PoliticianCrusade
             var politician1 = new Politician(0, 12);
             var politician2 = new Politician(97, 15);
             var politician3 = new Politician(0, 18);
+            var mom = new BGMom(30, 4);
+            var walker = new Walker(64, 4);
 
             Console.WriteLine("Money: {0} $", baba.Money.Quantity);
             Console.WriteLine("Cane: {0} %", baba.Cane.RemainingPower);
@@ -36,12 +38,14 @@ namespace PoliticianCrusade
             Console.WriteLine("Umbrella: {0} %", baba.Umbrella.RemainingPower);
             Console.WriteLine("Gun: {0} %", baba.Gun.RemainingPower);
 
-            var objects = 
+            var objects =
                 new List<GameObject>()
                 {
                     baba, parliament, garden1, garden2, policeman1, policeman2, politician1,
-                    politician2, politician3, baba.Money, baba.Cane, baba.Bag, baba.Umbrella, baba.Gun
+                    politician2, politician3, mom,walker, baba.Money, baba.Cane, baba.Bag, baba.Umbrella, baba.Gun
                 };
+
+            baba.AddEnemies(objects);
 
             foreach (var obj in objects)
             {
