@@ -3,18 +3,25 @@ using System.Collections.Generic;
 
 namespace PoliticianCrusade
 {
-    public class Money : StaticObject
+    public class Money : StaticObject, IResource
     {
         private static int xCoord = 45;
         private static int yCoord = 35;
 
-        public Money()
-            : base(xCoord, yCoord)
+        public Money() 
+                  : base(xCoord, yCoord)
         {
             this.Quantity = 0;
         }
 
         public int Quantity { get; set; }
+        public int RemainingPower
+        { 
+            get
+            {
+                return this.Quantity;
+            }
+        }
 
         public override char[,] GetImage()
         {
