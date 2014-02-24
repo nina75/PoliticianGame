@@ -14,7 +14,7 @@ namespace PoliticianCrusade
             this.Quantity = 0;
         }
 
-        public int Quantity { get; protected set; }
+        public int Quantity { get; set; }
         public int RemainingPower
         { 
             get
