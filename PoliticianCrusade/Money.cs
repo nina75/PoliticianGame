@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PoliticianCrusade
 {
-    public class Money : StaticObject
+    public class Money : StaticObject, IResource
     {
         private static int xCoord = 45;
         private static int yCoord = 35;
@@ -15,6 +15,13 @@ namespace PoliticianCrusade
         }
 
         public int Quantity { get; protected set; }
+        public int RemainingPower
+        { 
+            get
+            {
+                return this.Quantity;
+            }
+        }
 
         public override char[,] GetImage()
         {

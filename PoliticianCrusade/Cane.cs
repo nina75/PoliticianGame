@@ -8,7 +8,7 @@ namespace PoliticianCrusade
 {
     public class Cane : StaticObject, IResource
     {
-        private static int xCoord = 57;
+        protected static int xCoord = 57;
         private static int yCoord = 34;
 
         public const int price = 100;
@@ -19,7 +19,7 @@ namespace PoliticianCrusade
             this.RemainingPower = 100;
         }
 
-        public int RemainingPower { get; set; }
+        public int RemainingPower { get; protected set; }
 
         public override char[,] GetImage()
         {

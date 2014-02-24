@@ -32,11 +32,11 @@ namespace PoliticianCrusade
             var mom = new BGMom(30, 4);
             var walker = new Walker(64, 4);
 
-            Console.WriteLine("Money: {0} $", baba.Money.Quantity);
-            Console.WriteLine("Cane: {0} %", baba.Cane.RemainingPower);
-            Console.WriteLine("Bag: {0} %", baba.Bag.RemainingPower);
-            Console.WriteLine("Umbrella: {0} %", baba.Umbrella.RemainingPower);
-            Console.WriteLine("Gun: {0} %", baba.Gun.RemainingPower);
+            Console.WriteLine("Money: {0, 6} $", baba.Money.Quantity);
+            Console.WriteLine("Cane:     {0, 3} %", baba.Cane.RemainingPower);
+            Console.WriteLine("Bag:      {0, 3} %", baba.Bag.RemainingPower);
+            Console.WriteLine("Umbrella: {0, 3} %", baba.Umbrella.RemainingPower);
+            Console.WriteLine("Gun:      {0, 3} %", baba.Gun.RemainingPower);
 
             var objects = 
                 new List<GameObject>()
@@ -61,6 +61,11 @@ namespace PoliticianCrusade
                 politician2.MoveBack(97, 15);
                 politician3.Move(0, 18);
             }
+        }
+
+        private static void UpdateResource(IResource resource)
+        {
+           // Console.SetCursorPosition(Cane.xCoord, 2);
         }
     }
 }
