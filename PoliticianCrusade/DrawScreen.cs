@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
@@ -33,7 +29,6 @@ namespace PoliticianCrusade
 
             Console.SetCursorPosition(92, 33);
             Console.WriteLine("Gun");
-
         }
 
         public static void DrawVerticalLine(int coordX)
@@ -44,7 +39,5 @@ namespace PoliticianCrusade
                 Console.WriteLine('|');
             }
         }
-
-            
     }
 }

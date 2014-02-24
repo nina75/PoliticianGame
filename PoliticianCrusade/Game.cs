@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
@@ -11,7 +9,7 @@ namespace PoliticianCrusade
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
 
-        static void Main(string[] args)
+        static void Main()
         {
             Console.BufferHeight = Console.WindowHeight = MaxHeight;
             Console.BufferWidth = Console.WindowWidth = MaxWidth;
@@ -42,9 +40,9 @@ namespace PoliticianCrusade
             Console.WriteLine("Bag: {0} %", bag.RemainingPower);
             Console.WriteLine("Umbrella: {0} %", umbrella.RemainingPower);
             Console.WriteLine("Gun: {0} %", gun.RemainingPower);
-           
 
-            var objects = new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1, politician2, politician3, money, cane, bag, umbrella, gun };
+            var objects = 
+                new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1,                            politician2, politician3, money, cane, bag, umbrella, gun };
 
             foreach (var obj in objects)
             {
@@ -61,13 +59,7 @@ namespace PoliticianCrusade
                 politician1.Move(0, 12);
                 politician2.MoveBack(97, 15);
                 politician3.Move(0, 18);
-
             }
-
-            
-
-            
         }
-       
     }
 }

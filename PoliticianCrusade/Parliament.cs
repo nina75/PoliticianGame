@@ -8,7 +8,8 @@ namespace PoliticianCrusade
 {
     public class Parliament : StaticObject, IRenderable
     {
-        public Parliament(int x, int y) : base(x, y)
+        public Parliament(int x, int y) 
+                : base(x, y)
         {
         }
 
@@ -22,7 +23,7 @@ namespace PoliticianCrusade
                                  { ' ', '|', ' ', ' ', ' ', ' ', ' ', ' ',' ',' ', ' ', ' ', ' ' , ' ', ' ', ' ', ' ','|',' '}, 
                                  { ' ', '|', ' ', ' ', ' ', ' ', ' ', ' ',' ',' ', ' ', ' ', ' ' , ' ', ' ', ' ', ' ','|',' '}, 
                                  { ' ', '|', '_', '_', '_', '_', '_', '_','_', '_', '_', '_', '_', '_', '_', '_', '_','|', ' '}, 
-                               };
+            };
         }
 
         public override void RenderImg()

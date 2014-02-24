@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
@@ -11,17 +7,20 @@ namespace PoliticianCrusade
         public const int RowSteps = 11;
         public const int ColSteps = 2;
         public const int SleepTime = 50;
-        public Politician(int x, int y) : base(x, y)
+
+        public Politician(int x, int y)
+            : base(x, y)
         {
         }
 
+        #region Methods
         public override char[,] GetImage()
         {
             return new char[,] {
                                  { ' ', '*',' ' }, 
                                  {'|', 'D', '|' }, 
                              
-                               };
+            };
         }
 
         public override void RenderImg()
@@ -29,6 +28,7 @@ namespace PoliticianCrusade
             Console.ForegroundColor = ConsoleColor.Yellow;
             base.RenderImg();
         }
+
         public void Move(int startX, int startY)
         {
             base.ClearImg();
@@ -39,9 +39,8 @@ namespace PoliticianCrusade
             if (base.CoordX == Console.WindowWidth - 1)
             {
                 base.ClearImg();
-                 base.CoordX = 0;
+                base.CoordX = 0;
             }
-
         }
 
         public void MoveBack(int startX, int startY)
@@ -56,9 +55,7 @@ namespace PoliticianCrusade
                 base.ClearImg();
                 base.CoordX = Console.WindowWidth - 1;
             }
-
-        }
-
-
+        } 
+        #endregion
     }
 }

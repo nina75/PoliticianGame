@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
     public class Money : StaticObject
     {
-        public Money(int x, int y) : base(x, y)
+        public Money(int x, int y) 
+                  : base(x, y)
         {
             this.Quantity = 0;
         }
@@ -22,14 +20,12 @@ namespace PoliticianCrusade
                                  { '|', '$', '|' } ,
                                  { '|', '$', '|' } ,
                                  
-                               };
+            };
         }
         public override void RenderImg()
         {
             Console.ForegroundColor = ConsoleColor.Green;
             base.RenderImg();
         }
-
-
     }
 }

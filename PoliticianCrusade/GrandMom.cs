@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
     public class GrandMom : Character
     {
-        public GrandMom(int x, int y) : base(x, y)
+        public GrandMom(int x, int y) 
+            : base(x, y)
         {
-        
         }
+        
         public GrandMom()
         {
         }
@@ -22,16 +21,14 @@ namespace PoliticianCrusade
             base.RenderImg();
         }
 
-
         public void Move()
         {
             if (Console.KeyAvailable)
             {
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
-                {
                     Console.ReadKey(true);
-                }
+                
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
                     if (base.CoordX < Game.MaxWidth - 4) 
@@ -51,6 +48,7 @@ namespace PoliticianCrusade
                         base.RenderImg();
                     }
                 }
+              
                 if (userInput.Key == ConsoleKey.UpArrow)
                 {
                     if (base.CoordY > 0) 
@@ -70,9 +68,7 @@ namespace PoliticianCrusade
                         base.RenderImg();
                     }
                 }
-
             }
-
         }
 
         public override char[,] GetImage()
@@ -81,10 +77,7 @@ namespace PoliticianCrusade
                                  { '@', '@', '@', '@'}, 
                                  { ' ', 'o', 'o' ,' '},
                                  { '(', ' ', ' ', ')'}
-                               };
+            };
         }
-         
-
-
     }
 }

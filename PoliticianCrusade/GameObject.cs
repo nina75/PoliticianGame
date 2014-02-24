@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
@@ -13,13 +9,10 @@ namespace PoliticianCrusade
             this.CoordX = x;
             this.CoordY = y;
         }
-        protected GameObject()
-        {
-        }
+        protected GameObject() { }
 
         public int CoordX { get; set; }
         public int CoordY { get; set; }
-              
         
         public virtual char[,] GetImage()
         {
@@ -32,12 +25,10 @@ namespace PoliticianCrusade
             for (int i = 0; i < this.GetImage().GetLength(0); i++)
             {
                 for (int j = 0; j < this.GetImage().GetLength(1); j++)
-                {
                     Console.Write(this.GetImage()[i, j]);
-                }
+                
                 Console.SetCursorPosition(this.CoordX, this.CoordY + i + 1);
             }
-
         }
 
         public void ClearImg()
@@ -46,12 +37,10 @@ namespace PoliticianCrusade
             for (int i = 0; i < this.GetImage().GetLength(0); i++)
             {
                 for (int j = 0; j < this.GetImage().GetLength(1); j++)
-                {
                     Console.Write(" ");
-                }
+                
                 Console.SetCursorPosition(this.CoordX, this.CoordY + i + 1);
             }
         }
-       
     }
 }

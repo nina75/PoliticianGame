@@ -50,9 +50,9 @@
     <Compile Include="Garden.cs" />
     <Compile Include="GrandMom.cs" />
     <Compile Include="Gun.cs" />
-    <Compile Include="IMovable.cs" />
-    <Compile Include="IRenderable.cs" />
-    <Compile Include="IResource.cs" />
+    <Compile Include="Interfaces\IMovable.cs" />
+    <Compile Include="Interfaces\IRenderable.cs" />
+    <Compile Include="Interfaces\IResource.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="Parliament.cs" />
     <Compile Include="Policeman.cs" />
