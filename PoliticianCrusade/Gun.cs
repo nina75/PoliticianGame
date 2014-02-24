@@ -8,9 +8,13 @@ namespace PoliticianCrusade
 {
     public class Gun : StaticObject, IResource
     {
-         public Gun(int x, int y) : base(x, y)
+        public const int price = 250;
+       
+        public Gun(int x, int y) : base(x, y)
         {
+            this.RemainingPower = 100;
         }
+        public int RemainingPower { get; set; }
         public override char[,] GetImage()
         {
             return new char[,] { 

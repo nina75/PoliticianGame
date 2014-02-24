@@ -17,6 +17,11 @@ namespace PoliticianCrusade
             Console.BufferWidth = Console.WindowWidth = MaxWidth;
             DrawScreen.DrawConsoleBottom();
 
+            Engine();
+        }
+
+        private static void Engine()
+        {
             var baba = new GrandMom(48, 23);
             var parliament = new Parliament(40, 2);
             var garden1 = new Garden(5, 2);
@@ -32,7 +37,14 @@ namespace PoliticianCrusade
             var umbrella = new Umbrella(81, 34);
             var gun = new Gun(92, 35);
 
-            var objects = new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1, politician2, politician3, money, cane, bag, umbrella, gun};
+            Console.WriteLine("Money: {0} $", money.Quantity);
+            Console.WriteLine("Cane: {0} %", cane.RemainingPower);
+            Console.WriteLine("Bag: {0} %", bag.RemainingPower);
+            Console.WriteLine("Umbrella: {0} %", umbrella.RemainingPower);
+            Console.WriteLine("Gun: {0} %", gun.RemainingPower);
+           
+
+            var objects = new List<GameObject>() { baba, parliament, garden1, garden2, policeman1, policeman2, politician1, politician2, politician3, money, cane, bag, umbrella, gun };
 
             foreach (var obj in objects)
             {
@@ -52,9 +64,10 @@ namespace PoliticianCrusade
 
             }
 
-           
+            
 
-
+            
         }
+       
     }
 }

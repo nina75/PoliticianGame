@@ -8,9 +8,15 @@ namespace PoliticianCrusade
 {
     public class Cane : StaticObject, IResource
     {
+        public const int price = 100;
+       
         public Cane(int x, int y) : base(x, y)
         {
+            this.RemainingPower = 100;
         }
+
+        public int RemainingPower { get; set; }
+
         public override char[,] GetImage()
         {
             return new char[,] { 

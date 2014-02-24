@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
-    public class Money : StaticObject, IResource
+    public class Money : StaticObject
     {
         public Money(int x, int y) : base(x, y)
         {
+            this.Quantity = 0;
         }
+
+        public int Quantity { get; protected set; }
+
         public override char[,] GetImage()
         {
             return new char[,] { 
@@ -25,6 +29,7 @@ namespace PoliticianCrusade
             Console.ForegroundColor = ConsoleColor.Green;
             base.RenderImg();
         }
+
 
     }
 }
