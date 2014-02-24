@@ -21,7 +21,9 @@ namespace PoliticianCrusade
 
         public virtual void RenderImg()
         {
+            Console.CursorVisible = false;
             Console.SetCursorPosition(this.CoordX, this.CoordY);
+
             for (int i = 0; i < this.GetImage().GetLength(0); i++)
             {
                 for (int j = 0; j < this.GetImage().GetLength(1); j++)
