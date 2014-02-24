@@ -6,7 +6,6 @@ namespace PoliticianCrusade
     {
         public const int RowSteps = 11;
         public const int ColSteps = 2;
-        public const int SleepTime = 25;
 
         public Politician(int x, int y)
             : base(x, y)
@@ -39,7 +38,6 @@ namespace PoliticianCrusade
             base.ClearImg();
             base.CoordX++;
             base.RenderImg();
-            System.Threading.Thread.Sleep(SleepTime);
 
             if (base.CoordX == Console.WindowWidth - 1)
             {
@@ -58,7 +56,6 @@ namespace PoliticianCrusade
             base.ClearImg();
             base.CoordX--;
             base.RenderImg();
-            System.Threading.Thread.Sleep(SleepTime);
 
             if (base.CoordX == 2)
             {

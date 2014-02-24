@@ -127,7 +127,7 @@ namespace PoliticianCrusade
 
         private Character EnemyInRange()
         {
-            const int hitRange = 10;
+            const int hitRange = 5;
             int startScanX = this.CoordX - hitRange;
             int endScanX = this.CoordX + hitRange;
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -62,6 +63,8 @@ namespace PoliticianCrusade
                 politician1.Move(0, 12);
                 politician2.MoveBack(97, 15);
                 politician3.Move(0, 18);
+
+                Thread.Sleep(100);
             }
         }
     }
