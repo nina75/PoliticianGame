@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace PoliticianCrusade
 {
@@ -15,6 +16,7 @@ namespace PoliticianCrusade
         public Gun Gun { get; private set; }
 
         static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        
         public GrandMom(int x, int y)
             : base(x, y)
         {
@@ -44,10 +46,11 @@ namespace PoliticianCrusade
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
-                
+
+
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
-                    if (base.CoordX < Game.MaxWidth - 4) 
+                    if (base.CoordX < Game.MaxWidth - 4 && base.CoordY > 8) 
                     {
                         base.ClearImg();
                         base.CoordX++;
@@ -57,7 +60,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.LeftArrow)
                 {
-                    if (base.CoordX > 0) 
+                    if (base.CoordX > 0 && base.CoordY > 8) 
                     {
                         base.ClearImg();
                         base.CoordX--;
@@ -77,7 +80,7 @@ namespace PoliticianCrusade
                     if (base.CoordY == 9 && this.IsSpaceAvailable())
                     {
                         base.ClearImg();
-                        base.CoordY--;
+                        base.CoordY -= 3;
                         base.RenderImg();
                     }
                 }
@@ -107,10 +110,11 @@ namespace PoliticianCrusade
                             //this.Bag.RemainingPower -= 10;  testing purposes
 
                             this.Money.Quantity += 100;
+                            
                         }
                         else
                         {
-                            baba.Health -= 50;
+                            
                             this.EnemyInRange().Health -= 100;
 
                             if (baba.Health == 0)
@@ -147,17 +151,31 @@ namespace PoliticianCrusade
         private Character EnemyInRange()
         {
             const int hitRange = 5;
+
             int startScanX = this.CoordX - hitRange;
             int endScanX = this.CoordX + hitRange;
 
             int startScanY = this.CoordY - hitRange;
             int endScanY = this.CoordY + hitRange;
 
-            if (startScanX < 0 || startScanY < 0 
-                               || endScanX > Console.WindowWidth 
-                               || endScanY > Console.WindowHeight)
+            if (startScanX < 0)
             {
-                return null;
+                startScanX = 0;
+            }
+
+            if (endScanX > Console.WindowWidth)
+            {
+                endScanX = Console.WindowWidth;
+            }
+
+            if (startScanY < 0)
+            {
+                startScanY = 0;
+            }
+
+            if (endScanY > Console.WindowHeight)
+            {
+                endScanY = Console.WindowHeight;
             }
 
             for (int i = startScanX; i < endScanX; i++)
@@ -205,8 +223,13 @@ namespace PoliticianCrusade
         private bool IsSpaceAvailable()
         {
             return (CoordX > 7 && CoordX < 18) ||
-                   (CoordX > 75 && CoordX < 86);
+                   (CoordX > 75 && CoordX < 86) ||
+                    CoordX == 31 ||
+                    CoordX == 64 
+                   ;
         }
+
+      
         public override char[,] GetImage()
         {
             return new char[,] {
