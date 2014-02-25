@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
 
 namespace PoliticianCrusade
@@ -25,9 +24,7 @@ namespace PoliticianCrusade
             this.Gun = new Gun();
         }
         
-        //public GrandMom() //AN: празен конструктор?
-        //{
-        //}
+        //public GrandMom() {} //AN: празен конструктор? явно не е необходим щом работи без него :)
 
         public List<GameObject> EnemyList 
         {

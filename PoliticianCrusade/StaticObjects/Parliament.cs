@@ -9,7 +9,7 @@ namespace PoliticianCrusade
         {
         }
 
-
+        #region DrawImageMethods
         public override char[,] GetImage()
         {
 
@@ -28,6 +28,7 @@ namespace PoliticianCrusade
         {
             Console.ForegroundColor = ConsoleColor.Gray;
             base.RenderImg();
-        }
+        } 
+        #endregion
     }
 }

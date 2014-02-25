@@ -15,18 +15,30 @@ namespace PoliticianCrusade
         {
             this.RemainingPower = 100;
         }
-        
+
+        #region Properties
         public int CoordXOnScreen
         {
-            get { return 10; }
+            get
+            {
+                return 10;
+            }
         }
 
         public int CoordYOnScreen
         {
-            get { return 38; }
+            get
+            {
+                return 38;
+            }
         }
-        
-        public int RemainingPower { get; set; }
+
+        public int RemainingPower
+        {
+            get;
+            set;
+        } 
+        #endregion
 
         #region DrawImage
         public override char[,] GetImage()

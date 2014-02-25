@@ -8,10 +8,9 @@ namespace PoliticianCrusade
 {
     public class Cane : StaticObject, IResource
     {
+        public const int Price = 100;
         protected static int xCoord = 57;
         private static int yCoord = 34;
-
-        public const int Price = 100;
        
         public Cane() 
             : base(xCoord, yCoord)
@@ -19,7 +18,12 @@ namespace PoliticianCrusade
             this.RemainingPower = 100;
         }
 
-        public int RemainingPower { get; protected set; }
+        #region Properties
+        public int RemainingPower
+        {
+            get;
+            protected set;
+        }
 
         public int CoordXOnScreen
         {
@@ -29,8 +33,10 @@ namespace PoliticianCrusade
         public int CoordYOnScreen
         {
             get { return 35; }
-        }
+        } 
+        #endregion
 
+        #region DrawImageMethods
         public override char[,] GetImage()
         {
             return new char[,] { 
@@ -46,6 +52,7 @@ namespace PoliticianCrusade
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             base.RenderImg();
-        }
+        } 
+        #endregion
     }
 }

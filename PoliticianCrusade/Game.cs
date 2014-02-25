@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace PoliticianCrusade
 {
+    [Version ("0.82")]
     public class Game
     {
         public const int MaxHeight = 40;
