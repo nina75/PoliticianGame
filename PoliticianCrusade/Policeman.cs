@@ -13,17 +13,7 @@ namespace PoliticianCrusade
         {
         }
 
-        #region Methods
-
-        public override char[,] GetImage()
-        {
-            return new char[,] {
-                                 { 'o', 'o'}, 
-                                 { '|', '|' }, 
-                             
-            };
-        }
-
+        #region Action
         public void Move(int startX, int startY)
         {
             if (isAlive == false)
@@ -60,12 +50,23 @@ namespace PoliticianCrusade
             }
 
         }
+        #endregion
+
+        #region DrawImage
+        public override char[,] GetImage()
+        {
+            return new char[,] {
+                                 { 'o', 'o'}, 
+                                 { '|', '|' }, 
+                             
+            };
+        }
 
         public override void RenderImg()
         {
             Console.ForegroundColor = ConsoleColor.Gray;
             base.RenderImg();
-        } 
+        }  
         #endregion
     }
 }

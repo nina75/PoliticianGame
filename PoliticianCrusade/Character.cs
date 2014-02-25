@@ -13,11 +13,11 @@ namespace PoliticianCrusade
             this.Health = 100;
             this.isAlive = true;
         }
+
         protected Character()
         {
             this.Health = 100;
             this.isAlive = true;
         }
-
     }
 }

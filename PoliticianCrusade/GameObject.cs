@@ -9,7 +9,10 @@ namespace PoliticianCrusade
             this.CoordX = x;
             this.CoordY = y;
         }
-        protected GameObject() { }
+        
+        protected GameObject() //what for?
+        { 
+        } 
 
         public int CoordX { get; set; }
         public int CoordY { get; set; }

@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoliticianCrusade
 {
     public class Gun : StaticObject, IResource
     {
+        public const int Price = 250;
         private static int xCoord = 92;
         private static int yCoord = 35;
 
-        public const int Price = 250;
-       
         public Gun() 
                 : base(xCoord, yCoord)
         {
             this.RemainingPower = 100;
         }
+        
         public int CoordXOnScreen
         {
             get { return 10; }
@@ -29,7 +27,8 @@ namespace PoliticianCrusade
         }
         
         public int RemainingPower { get; set; }
-        
+
+        #region DrawImage
         public override char[,] GetImage()
         {
             return new char[,] { 
@@ -44,6 +43,7 @@ namespace PoliticianCrusade
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
             base.RenderImg();
-        }  
+        }   
+        #endregion
     }
 }

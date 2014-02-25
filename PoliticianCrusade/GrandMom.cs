@@ -7,31 +7,17 @@ namespace PoliticianCrusade
 {
     public class GrandMom : Character
     {
-        private List<GameObject> enemyList;
-
+        private List<GameObject> enemyList;  
         public Money Money { get; private set; }
-
         public Cane Cane { get; private set; }
-
         public Bag Bag { get; private set; }
-
         public Umbrella Umbrella { get; private set; }
-
         public Gun Gun { get; private set; }
-
-        public List<GameObject> EnemyList
-        {
-            get
-            {
-                return new List<GameObject>(this.enemyList);
-            }
-        }
 
         public GrandMom(int x, int y)
             : base(x, y)
         {
             this.enemyList = new List<GameObject>();
-
             this.Money = new Money();
             this.Cane = new Cane();
             this.Bag = new Bag();
@@ -39,16 +25,19 @@ namespace PoliticianCrusade
             this.Gun = new Gun();
         }
         
-        public GrandMom()
+        //public GrandMom() //AN: празен конструктор?
+        //{
+        //}
+
+        public List<GameObject> EnemyList 
         {
+            get
+            {
+                return new List<GameObject>(this.enemyList);
+            }
         }
 
-        public override void RenderImg()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            base.RenderImg();
-        }
-
+        #region Action
         public void Move()
         {
             if (Console.KeyAvailable)
@@ -56,30 +45,30 @@ namespace PoliticianCrusade
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
-                
+
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
-                    if (base.CoordX < Game.MaxWidth - 4) 
+                    if (base.CoordX < Game.MaxWidth - 4)
                     {
                         base.ClearImg();
-                        base.CoordX ++;
+                        base.CoordX++;
                         base.RenderImg();
                     }
                 }
 
                 if (userInput.Key == ConsoleKey.LeftArrow)
                 {
-                    if (base.CoordX > 0) 
+                    if (base.CoordX > 0)
                     {
                         base.ClearImg();
                         base.CoordX--;
                         base.RenderImg();
                     }
                 }
-              
+
                 if (userInput.Key == ConsoleKey.UpArrow)
                 {
-                    if (base.CoordY > 0) 
+                    if (base.CoordY > 0)
                     {
                         base.ClearImg();
                         base.CoordY--;
@@ -89,7 +78,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.DownArrow)
                 {
-                    if (base.CoordY < Game.MaxHeight - 11) 
+                    if (base.CoordY < Game.MaxHeight - 11)
                     {
                         base.ClearImg();
                         base.CoordY++;
@@ -111,16 +100,16 @@ namespace PoliticianCrusade
                         {
                             this.EnemyInRange().Health -= 100;
                         }
-                     }
+                    }
                 }
             }
         }
 
         public void AddEnemies(List<GameObject> objects)
         {
-            var enemies = objects
-                .Where(o => o.GetType().Name == "Politician" || o.GetType().Name == "Policeman")
-                .ToList();
+            var enemies = 
+                        objects.Where(o => o.GetType().Name == "Politician" 
+                                   || o.GetType().Name == "Policeman").ToList();
 
             this.enemyList.AddRange(enemies);
         }
@@ -134,9 +123,9 @@ namespace PoliticianCrusade
             int startScanY = this.CoordY - hitRange;
             int endScanY = this.CoordY + hitRange;
 
-            if (startScanX < 0 || startScanY < 0 ||
-                endScanX > Console.WindowWidth ||
-                endScanY > Console.WindowHeight)
+            if (startScanX < 0 || startScanY < 0 
+                               || endScanX > Console.WindowWidth 
+                               || endScanY > Console.WindowHeight)
             {
                 return null;
             }
@@ -150,7 +139,6 @@ namespace PoliticianCrusade
                         if (enemy.CoordX == i && enemy.CoordY == j)
                         {
                             var bufferedEnemy = enemy as Character;
-
                             if (bufferedEnemy != null && bufferedEnemy.isAlive == true)
                             {
                                 return enemy as Character;
@@ -161,6 +149,14 @@ namespace PoliticianCrusade
             }
 
             return null;
+        } 
+        #endregion
+
+        #region DrawImage
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            base.RenderImg();
         }
 
         public override char[,] GetImage()
@@ -170,7 +166,7 @@ namespace PoliticianCrusade
                                  { ' ', 'o', 'o' ,' '},
                                  { '(', ' ', ' ', ')'}
             };
-        }
-
+        } 
+        #endregion
     }
 }

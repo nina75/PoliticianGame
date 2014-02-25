@@ -14,24 +14,35 @@ namespace PoliticianCrusade
             this.Quantity = 0;
         }
 
+        #region Properties
         public int Quantity { get; set; }
+
         public int RemainingPower
-        { 
+        {
             get
             {
                 return this.Quantity;
             }
         }
+
         public int CoordXOnScreen
         {
-            get { return 10; }
+            get
+            {
+                return 10;
+            }
         }
 
         public int CoordYOnScreen
         {
-            get { return 7; }
-        }
+            get
+            {
+                return 7;
+            }
+        } 
+        #endregion
 
+        #region DrawImage
         public override char[,] GetImage()
         {
             return new char[,] { 
@@ -41,10 +52,12 @@ namespace PoliticianCrusade
                                  
             };
         }
+
         public override void RenderImg()
         {
             Console.ForegroundColor = ConsoleColor.Green;
             base.RenderImg();
-        }
+        } 
+        #endregion
     }
 }

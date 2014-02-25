@@ -12,22 +12,7 @@ namespace PoliticianCrusade
         {
         }
 
-        #region Methods
-        public override char[,] GetImage()
-        {
-            return new char[,] {
-                                 { ' ', '*',' ' }, 
-                                 {'|', 'D', '|' }, 
-                             
-            };
-        }
-
-        public override void RenderImg()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            base.RenderImg();
-        }
-
+        #region Action
         public void Move(int startX, int startY)
         {
             if (isAlive == false)
@@ -62,6 +47,23 @@ namespace PoliticianCrusade
                 base.ClearImg();
                 base.CoordX = Console.WindowWidth - 1;
             }
+        } 
+        #endregion
+
+        #region DrawImage
+        public override char[,] GetImage()
+        {
+            return new char[,] {
+                                 { ' ', '*',' ' }, 
+                                 {'|', 'D', '|' }, 
+                             
+            };
+        }
+
+        public override void RenderImg()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            base.RenderImg();
         } 
         #endregion
     }
