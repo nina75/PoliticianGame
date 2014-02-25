@@ -14,7 +14,7 @@ namespace PoliticianCrusade
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
 
-        //static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
         public GrandMom(int x, int y)
             : base(x, y)
         {
@@ -26,7 +26,7 @@ namespace PoliticianCrusade
             this.Gun = new Gun();
         }
 
-        //public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
+        public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
 
         public List<GameObject> EnemyList 
         {
@@ -96,35 +96,38 @@ namespace PoliticianCrusade
                 if (userInput.Key == ConsoleKey.Spacebar)
                 {
                     Character enemy = this.EnemyInRange();
-                    //Character baba = new GrandMom();
+                    Character baba = new GrandMom();
                     if (enemy as Character != null)
                     {
                         if (enemy.Health <= 0)
                         {
                             enemy.isAlive = false;
                             enemy.ClearImg();
-                            //baba.Health -= 50; // 
+
+                            //this.Health -= 5;               testing purposes
+                            //this.Bag.RemainingPower -= 10;  testing purposes
+
                             this.Money.Quantity += 100;
                             
                         }
                         else
                         {
-                            
+                           
                             this.EnemyInRange().Health -= 100;
 
-                           //if(this.Health == 0)
-                           //{
-                           //    //DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?","PoliticianCrusade", MessageBoxButtons.YesNo);
+                            if (this.Health == 0)
+                            {
+                                DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
-                           //    //if(res == DialogResult.Yes)
-                           //    //{
-                           //    //    restartGame = true;
-                           //    //}
-                           //    //else
-                           //    //{
-                           //    //    Environment.Exit(0);
-                           //    //}
-                           //}
+                                if (res == DialogResult.Yes)
+                                {
+                                    restartGame = true;
+                                }
+                                else
+                                {
+                                    Environment.Exit(0);
+                                }
+                            }
                             
                             
                             
