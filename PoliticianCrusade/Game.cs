@@ -35,11 +35,11 @@ namespace PoliticianCrusade
             var walker = new Walker(64, 4);
 
             Console.SetCursorPosition(0, 34);
-            Console.WriteLine("Money: {0, 6} $", baba.Money.Quantity);
-            Console.WriteLine("Cane:     {0, 3} %", baba.Cane.RemainingPower);
-            Console.WriteLine("Bag:      {0, 3} %", baba.Bag.RemainingPower);
-            Console.WriteLine("Umbrella: {0, 3} %", baba.Umbrella.RemainingPower);
-            Console.WriteLine("Gun:      {0, 3} %", baba.Gun.RemainingPower);
+            Console.WriteLine("Money: {0, 6} $  Use Arrows: ", baba.Money.Quantity);
+            Console.WriteLine("Cane:     {0, 3} %   UP", baba.Cane.RemainingPower);
+            Console.WriteLine("Bag:      {0, 3} %  DOWN  ", baba.Bag.RemainingPower);
+            Console.WriteLine("Umbrella: {0, 3} %  LEFT ", baba.Umbrella.RemainingPower);
+            Console.WriteLine("Gun:      {0, 3} %  RIGHT", baba.Gun.RemainingPower);
 
             var objects =
                 new List<GameObject>()
