@@ -46,11 +46,11 @@ namespace PoliticianCrusade
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
-                
-                
+
+
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
-                    if (base.CoordX < Game.MaxWidth - 4) 
+                    if (base.CoordX < Game.MaxWidth - 4 && base.CoordY > 8) 
                     {
                         base.ClearImg();
                         base.CoordX++;
@@ -60,7 +60,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.LeftArrow)
                 {
-                    if (base.CoordX > 0) 
+                    if (base.CoordX > 0 && base.CoordY > 8) 
                     {
                         base.ClearImg();
                         base.CoordX--;
