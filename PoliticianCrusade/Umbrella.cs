@@ -30,12 +30,16 @@ namespace PoliticianCrusade
         
         public override char[,] GetImage()
         {
+                   
+                    
+
             return new char[,] { 
                                  { ' ', '_', ' ' } ,
                                  { ' ', '|' , ' '} ,
                                  { '_', '_', '_' } ,
                                  { '\\', '|', '/'} ,
                                  { ' ', '|' , ' '} ,
+                                 
                                  
             };
         }

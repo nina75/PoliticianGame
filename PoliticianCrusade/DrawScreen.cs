@@ -26,9 +26,27 @@ namespace PoliticianCrusade
 
             Console.SetCursorPosition(78, 33);
             Console.WriteLine("Umbrella");
-
+            
             Console.SetCursorPosition(92, 33);
             Console.WriteLine("Gun");
+
+            Console.SetCursorPosition(0, 8);
+            Console.Write("*****");
+
+            Console.SetCursorPosition(24, 8);
+            Console.Write("*******");
+
+            Console.SetCursorPosition(35, 8);
+            Console.Write("*****");
+
+            Console.SetCursorPosition(58, 8);
+            Console.Write("****");
+
+            Console.SetCursorPosition(68, 8);
+            Console.Write("*****");
+
+            Console.SetCursorPosition(92, 8);
+            Console.Write("********");
         }
 
         public static void DrawVerticalLine(int coordX)
