@@ -101,6 +101,7 @@ namespace PoliticianCrusade
                         if (this.EnemyInRange().Health <= 0)
                         {
                             this.EnemyInRange().isAlive = false;
+
                             this.Money.Quantity += 100;
                         }
                         else

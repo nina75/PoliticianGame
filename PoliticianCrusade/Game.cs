@@ -10,7 +10,7 @@ namespace PoliticianCrusade
     {
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
-
+        //static char[,] playerField = new char[MaxHeight, MaxWidth];
         static void Main()
         {
             Console.BufferHeight = Console.WindowHeight = MaxHeight;
