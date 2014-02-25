@@ -102,7 +102,10 @@ namespace PoliticianCrusade
                         {
                             enemy.isAlive = false;
                             enemy.ClearImg();
-                            //baba.Health -= 50; // 
+
+                            //this.Health -= 5;               testing purposes
+                            //this.Bag.RemainingPower -= 10;  testing purposes
+
                             this.Money.Quantity += 100;
                         }
                         else

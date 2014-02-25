@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,8 +70,9 @@ namespace PoliticianCrusade
                 politician3.Move(0, 18);
 
                 UpdateResource(allResources);
+
                 Console.SetCursorPosition(10, 38);
-                Console.Write(baba.Health);
+                Console.Write("{0, 3}", baba.Health);
 
                 Thread.Sleep(100);
             }
@@ -86,7 +86,8 @@ namespace PoliticianCrusade
             {
                 Console.SetCursorPosition(10, 33 + newLiner++);
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write(resource.RemainingPower);
+
+                Console.Write("{0, 3}", resource.RemainingPower);
             }  
         }
     }
