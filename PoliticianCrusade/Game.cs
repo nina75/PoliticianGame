@@ -57,6 +57,8 @@ namespace PoliticianCrusade
                 obj.RenderImg();
             }
 
+            var allResources = baba.AllResources();
+
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -68,16 +70,16 @@ namespace PoliticianCrusade
                 politician2.MoveBack(97, 15);
                 politician3.Move(0, 18);
 
-                UpdateResource(baba);
+                UpdateResource(allResources);
+                Console.SetCursorPosition(10, 38);
+                Console.Write(baba.Health);
 
                 Thread.Sleep(100);
             }
         }
 
-        private static void UpdateResource(GrandMom baba)
+        private static void UpdateResource(IEnumerable<IResource> allResources)
         {
-            var allResources = baba.AllResources();
-
             int newLiner = 0;
 
             foreach (var resource in allResources)
@@ -85,11 +87,7 @@ namespace PoliticianCrusade
                 Console.SetCursorPosition(10, 33 + newLiner++);
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.Write(resource.RemainingPower);
-            }
-
-            Console.SetCursorPosition(10, 33 + newLiner);
-            Console.Write(baba.Health);
-            
+            }  
         }
     }
 }
