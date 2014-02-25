@@ -35,7 +35,7 @@ namespace PoliticianCrusade
             var mom = new BGMom(30, 4);
             var walker = new Walker(64, 4);
 
-            Console.SetCursorPosition(0, 34);
+            Console.SetCursorPosition(0, 33);
             Console.WriteLine("Money: {0, 6} $  Use Arrows: ", baba.Money.Quantity);
             Console.WriteLine("Cane:     {0, 3} %   UP", baba.Cane.RemainingPower);
             Console.WriteLine("Bag:      {0, 3} %  DOWN  ", baba.Bag.RemainingPower);
