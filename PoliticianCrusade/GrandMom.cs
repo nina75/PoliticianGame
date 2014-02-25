@@ -79,7 +79,14 @@ namespace PoliticianCrusade
               
                 if (userInput.Key == ConsoleKey.UpArrow)
                 {
-                    if (base.CoordY > 0) 
+                    if (base.CoordY > 9) 
+                    {
+                        base.ClearImg();
+                        base.CoordY--;
+                        base.RenderImg();
+                    }
+
+                    if (base.CoordY == 9 && this.IsSpaceAvailable())
                     {
                         base.ClearImg();
                         base.CoordY--;
@@ -163,6 +170,11 @@ namespace PoliticianCrusade
             return null;
         }
 
+        private bool IsSpaceAvailable()
+        {
+            return (CoordX > 7 && CoordX < 18) ||
+                   (CoordX > 75 && CoordX < 86);
+        }
         public override char[,] GetImage()
         {
             return new char[,] {
