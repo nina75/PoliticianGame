@@ -22,7 +22,7 @@ namespace PoliticianCrusade
         public int RemainingPower
         {
             get;
-            protected set;
+            set;
         }
 
         public int CoordXOnScreen

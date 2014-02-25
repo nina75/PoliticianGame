@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace PoliticianCrusade
 {
@@ -47,11 +48,11 @@ namespace PoliticianCrusade
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
-                
-                
+
+
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
-                    if (base.CoordX < Game.MaxWidth - 4) 
+                    if (base.CoordX < Game.MaxWidth - 4 && base.CoordY > 8) 
                     {
                         base.ClearImg();
                         base.CoordX++;
@@ -61,7 +62,7 @@ namespace PoliticianCrusade
 
                 if (userInput.Key == ConsoleKey.LeftArrow)
                 {
-                    if (base.CoordX > 0) 
+                    if (base.CoordX > 0 && base.CoordY > 8) 
                     {
                         base.ClearImg();
                         base.CoordX--;
@@ -118,7 +119,7 @@ namespace PoliticianCrusade
                             
                             this.EnemyInRange().Health -= 100;
 
-                            if (this.Health == 0)
+                            if (baba.Health == 0)
                             {
                                 DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
@@ -152,17 +153,31 @@ namespace PoliticianCrusade
         private Character EnemyInRange()
         {
             const int hitRange = 5;
+
             int startScanX = this.CoordX - hitRange;
             int endScanX = this.CoordX + hitRange;
 
             int startScanY = this.CoordY - hitRange;
             int endScanY = this.CoordY + hitRange;
 
-            if (startScanX < 0 || startScanY < 0 
-                               || endScanX > Console.WindowWidth 
-                               || endScanY > Console.WindowHeight)
+            if (startScanX < 0)
             {
-                return null;
+                startScanX = 0;
+            }
+
+            if (endScanX > Console.WindowWidth)
+            {
+                endScanX = Console.WindowWidth;
+            }
+
+            if (startScanY < 0)
+            {
+                startScanY = 0;
+            }
+
+            if (endScanY > Console.WindowHeight)
+            {
+                endScanY = Console.WindowHeight;
             }
 
             for (int i = startScanX; i < endScanX; i++)
@@ -215,7 +230,9 @@ namespace PoliticianCrusade
                     CoordX == 64 
                    ;
         }
-
+               
+         
+      
       
         public override char[,] GetImage()
         {
