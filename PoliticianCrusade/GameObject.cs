@@ -10,13 +10,15 @@ namespace PoliticianCrusade
             this.CoordY = y;
         }
         
-        protected GameObject() //what for?
+        protected GameObject()
         { 
         } 
 
         public int CoordX { get; set; }
         public int CoordY { get; set; }
-        
+
+        #region DrawImageMethods
+
         public virtual char[,] GetImage()
         {
             return new char[,] { { '*' } };
@@ -31,7 +33,7 @@ namespace PoliticianCrusade
             {
                 for (int j = 0; j < this.GetImage().GetLength(1); j++)
                     Console.Write(this.GetImage()[i, j]);
-                
+
                 Console.SetCursorPosition(this.CoordX, this.CoordY + i + 1);
             }
         }
@@ -43,9 +45,10 @@ namespace PoliticianCrusade
             {
                 for (int j = 0; j < this.GetImage().GetLength(1); j++)
                     Console.Write(" ");
-                
+
                 Console.SetCursorPosition(this.CoordX, this.CoordY + i + 1);
             }
-        }
+        } 
+        #endregion
     }
 }

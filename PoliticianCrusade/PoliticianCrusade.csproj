@@ -43,31 +43,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bag.cs" />
+    <Compile Include="Asets\Bag.cs" />
     <Compile Include="BGMom.cs" />
-    <Compile Include="Cane.cs" />
+    <Compile Include="Asets\Cane.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="DrawScreen.cs" />
     <Compile Include="GameObject.cs" />
-    <Compile Include="Garden.cs" />
+    <Compile Include="StaticObjects\Garden.cs" />
     <Compile Include="GrandMom.cs" />
-    <Compile Include="Gun.cs" />
+    <Compile Include="Asets\Gun.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IRenderable.cs" />
     <Compile Include="Interfaces\IResource.cs" />
-    <Compile Include="Money.cs" />
-    <Compile Include="Parliament.cs" />
+    <Compile Include="Asets\Money.cs" />
+    <Compile Include="StaticObjects\Parliament.cs" />
     <Compile Include="Policeman.cs" />
     <Compile Include="Politician.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticObject.cs" />
-    <Compile Include="Umbrella.cs" />
+    <Compile Include="StaticObjects\StaticObject.cs" />
+    <Compile Include="Asets\Umbrella.cs" />
+    <Compile Include="Misc\VersionAttribute.cs" />
     <Compile Include="Walker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Misc\ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

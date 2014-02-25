@@ -8,7 +8,7 @@ namespace PoliticianCrusade
         public bool isAlive { get; set; }
 
         protected Character(int x, int y) 
-            : base(x, y)
+                : base(x, y)
         {
             this.Health = 100;
             this.isAlive = true;

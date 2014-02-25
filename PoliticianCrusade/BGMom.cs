@@ -26,5 +26,4 @@ namespace PoliticianCrusade
             base.RenderImg();
         }
     }
-
 }
