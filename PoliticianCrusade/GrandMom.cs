@@ -14,7 +14,8 @@ namespace PoliticianCrusade
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
 
-        //static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        //static bool restartGame = false; //Dinko: Още го размишлявам! Недейте да триете закоментираните редове!
+        
         public GrandMom(int x, int y)
             : base(x, y)
         {
