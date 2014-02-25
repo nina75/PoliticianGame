@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace PoliticianCrusade
 {
@@ -147,17 +148,31 @@ namespace PoliticianCrusade
         private Character EnemyInRange()
         {
             const int hitRange = 5;
+
             int startScanX = this.CoordX - hitRange;
             int endScanX = this.CoordX + hitRange;
 
             int startScanY = this.CoordY - hitRange;
             int endScanY = this.CoordY + hitRange;
 
-            if (startScanX < 0 || startScanY < 0 
-                               || endScanX > Console.WindowWidth 
-                               || endScanY > Console.WindowHeight)
+            if (startScanX < 0)
             {
-                return null;
+                startScanX = 0;
+            }
+
+            if (endScanX > Console.WindowWidth)
+            {
+                endScanX = Console.WindowWidth;
+            }
+
+            if (startScanY < 0)
+            {
+                startScanY = 0;
+            }
+
+            if (endScanY > Console.WindowHeight)
+            {
+                endScanY = Console.WindowHeight;
             }
 
             for (int i = startScanX; i < endScanX; i++)
