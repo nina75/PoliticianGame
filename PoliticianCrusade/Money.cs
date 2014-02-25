@@ -22,6 +22,15 @@ namespace PoliticianCrusade
                 return this.Quantity;
             }
         }
+        public int CoordXOnScreen
+        {
+            get { return 10; }
+        }
+
+        public int CoordYOnScreen
+        {
+            get { return 7; }
+        }
 
         public override char[,] GetImage()
         {

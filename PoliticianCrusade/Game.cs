@@ -21,6 +21,7 @@ namespace PoliticianCrusade
 
         private static void Engine()
         {
+
             var baba = new GrandMom(48, 23);
             var parliament = new Parliament(40, 2);
             var garden1 = new Garden(5, 2);
@@ -33,6 +34,7 @@ namespace PoliticianCrusade
             var mom = new BGMom(30, 4);
             var walker = new Walker(64, 4);
 
+            Console.SetCursorPosition(0, 34);
             Console.WriteLine("Money: {0, 6} $", baba.Money.Quantity);
             Console.WriteLine("Cane:     {0, 3} %", baba.Cane.RemainingPower);
             Console.WriteLine("Bag:      {0, 3} %", baba.Bag.RemainingPower);
@@ -70,7 +72,10 @@ namespace PoliticianCrusade
 
         private static void UpdateResource(IResource resource)
         {
-           // Console.SetCursorPosition(Cane.xCoord, 2);
+            Console.SetCursorPosition(resource.CoordXOnScreen, resource.CoordYOnScreen);
+            Console.Write("   ");
+            Console.SetCursorPosition(resource.CoordXOnScreen, resource.CoordYOnScreen);
+            Console.Write(resource.RemainingPower);
         }
     }
 }

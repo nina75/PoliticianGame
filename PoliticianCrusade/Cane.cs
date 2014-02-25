@@ -11,7 +11,7 @@ namespace PoliticianCrusade
         protected static int xCoord = 57;
         private static int yCoord = 34;
 
-        public const int price = 100;
+        public const int Price = 100;
        
         public Cane() 
             : base(xCoord, yCoord)
@@ -20,6 +20,16 @@ namespace PoliticianCrusade
         }
 
         public int RemainingPower { get; protected set; }
+
+        public int CoordXOnScreen
+        {
+            get { return 10; }
+        }
+
+        public int CoordYOnScreen
+        {
+            get { return 35; }
+        }
 
         public override char[,] GetImage()
         {

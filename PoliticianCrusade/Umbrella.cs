@@ -8,7 +8,7 @@ namespace PoliticianCrusade
         private static int xCoord = 81;
         private static int yCoord = 34;
 
-        public const int price = 150;
+        public const int Price = 150;
        
         public Umbrella() 
                 : base(xCoord, yCoord)
@@ -17,6 +17,16 @@ namespace PoliticianCrusade
         }
 
         public int RemainingPower{ get; set; }
+
+        public int CoordXOnScreen
+        {
+            get { return 10; }
+        }
+
+        public int CoordYOnScreen
+        {
+            get { return 37; }
+        }
         
         public override char[,] GetImage()
         {

@@ -11,12 +11,21 @@ namespace PoliticianCrusade
         private static int xCoord = 92;
         private static int yCoord = 35;
 
-        public const int price = 250;
+        public const int Price = 250;
        
         public Gun() 
                 : base(xCoord, yCoord)
         {
             this.RemainingPower = 100;
+        }
+        public int CoordXOnScreen
+        {
+            get { return 10; }
+        }
+
+        public int CoordYOnScreen
+        {
+            get { return 38; }
         }
         
         public int RemainingPower { get; set; }
