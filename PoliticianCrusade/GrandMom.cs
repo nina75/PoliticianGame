@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace PoliticianCrusade
 {
@@ -14,6 +15,7 @@ namespace PoliticianCrusade
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
 
+        //static bool restartGame = false; // В последствие ще оправя!!!
         public GrandMom(int x, int y)
             : base(x, y)
         {
@@ -106,6 +108,23 @@ namespace PoliticianCrusade
                         else
                         {
                             this.EnemyInRange().Health -= 100;
+
+                           //if(this.Health == 0)
+                           //{
+                           //    //DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?","PoliticianCrusade", MessageBoxButtons.YesNo);
+
+                           //    //if(res == DialogResult.Yes)
+                           //    //{
+                           //    //    restartGame = true;
+                           //    //}
+                           //    //else
+                           //    //{
+                           //    //    Environment.Exit(0);
+                           //    //}
+                           //}
+                            
+                            
+                            
                         }
                      }
                 }
