@@ -14,7 +14,7 @@ namespace PoliticianCrusade
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
 
-        //static bool restartGame = false; //Dinko: Още го размишлявам! Недейте да триете закоментираните редове!
+        static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
         
         public GrandMom(int x, int y)
             : base(x, y)
@@ -27,7 +27,7 @@ namespace PoliticianCrusade
             this.Gun = new Gun();
         }
 
-        //public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
+        public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
 
         public List<GameObject> EnemyList 
         {
@@ -45,6 +45,7 @@ namespace PoliticianCrusade
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
+                
                 
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
@@ -78,7 +79,7 @@ namespace PoliticianCrusade
                     if (base.CoordY == 9 && this.IsSpaceAvailable())
                     {
                         base.ClearImg();
-                        base.CoordY--;
+                        base.CoordY -= 3;
                         base.RenderImg();
                     }
                 }
@@ -96,33 +97,38 @@ namespace PoliticianCrusade
                 if (userInput.Key == ConsoleKey.Spacebar)
                 {
                     Character enemy = this.EnemyInRange();
-                    //Character baba = new GrandMom();
+                    Character baba = new GrandMom();
                     if (enemy as Character != null)
                     {
-                        if (this.EnemyInRange().Health <= 0)
+                        if (enemy.Health <= 0)
                         {
-                            this.EnemyInRange().isAlive = false;
-                            //baba.Health -= 50; // 
+                            enemy.isAlive = false;
+                            enemy.ClearImg();
+
+                            //this.Health -= 5;               testing purposes
+                            //this.Bag.RemainingPower -= 10;  testing purposes
+
                             this.Money.Quantity += 100;
+                            
                         }
                         else
                         {
                             
                             this.EnemyInRange().Health -= 100;
 
-                           //if(this.Health == 0)
-                           //{
-                           //    //DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?","PoliticianCrusade", MessageBoxButtons.YesNo);
+                            if (this.Health == 0)
+                            {
+                                DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
-                           //    //if(res == DialogResult.Yes)
-                           //    //{
-                           //    //    restartGame = true;
-                           //    //}
-                           //    //else
-                           //    //{
-                           //    //    Environment.Exit(0);
-                           //    //}
-                           //}
+                                if (res == DialogResult.Yes)
+                                {
+                                    restartGame = true;
+                                }
+                                else
+                                {
+                                    Environment.Exit(0);
+                                }
+                            }
                             
                             
                             
@@ -179,6 +185,19 @@ namespace PoliticianCrusade
         }
         #endregion
 
+        public List<IResource> AllResources()
+        {
+            var list = new List<IResource>();
+
+            list.Add(this.Money);
+            list.Add(this.Bag);
+            list.Add(this.Cane);
+            list.Add(this.Gun);
+            list.Add(this.Umbrella);
+
+            return list;
+        }
+
         #region DrawImage
         public override void RenderImg()
         {
@@ -189,8 +208,13 @@ namespace PoliticianCrusade
         private bool IsSpaceAvailable()
         {
             return (CoordX > 7 && CoordX < 18) ||
-                   (CoordX > 75 && CoordX < 86);
+                   (CoordX > 75 && CoordX < 86) ||
+                    CoordX == 31 ||
+                    CoordX == 64 
+                   ;
         }
+
+      
         public override char[,] GetImage()
         {
             return new char[,] {
