@@ -15,7 +15,7 @@ namespace PoliticianCrusade
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
 
-        static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        
         
         public GrandMom(int x, int y)
             : base(x, y)
@@ -117,19 +117,7 @@ namespace PoliticianCrusade
                             
                             this.EnemyInRange().Health -= 100;
 
-                            if (baba.Health == 0)
-                            {
-                                DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
-
-                                if (res == DialogResult.Yes)
-                                {
-                                    restartGame = true;
-                                }
-                                else
-                                {
-                                    Environment.Exit(0);
-                                }
-                            }
+                            
                             
                             
                             

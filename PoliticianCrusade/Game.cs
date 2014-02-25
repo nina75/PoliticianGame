@@ -2,12 +2,15 @@
 using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace PoliticianCrusade
 {
     [Version ("000.820")]
+    
     public class Game
     {
+        static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
 
@@ -156,6 +159,16 @@ namespace PoliticianCrusade
             }
             Console.SetCursorPosition(47, 20);
             Console.ForegroundColor = ConsoleColor.Red;
+            DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
+
+            if (res == DialogResult.Yes)
+            {
+                restartGame = true;
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
             Console.WriteLine("GAME OVER");
 
         }
