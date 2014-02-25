@@ -5,12 +5,14 @@ using System.Linq;
 
 namespace PoliticianCrusade
 {
-    [Version ("0.82")]
+    [Version ("000.820")]
     public class Game
     {
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
-        //static char[,] playerField = new char[MaxHeight, MaxWidth];
+
+        //static char[,] playerField = new char[MaxHeight, MaxWidth]; //Dinko:
+        
         static void Main()
         {
             Console.BufferHeight = Console.WindowHeight = MaxHeight;
@@ -22,7 +24,6 @@ namespace PoliticianCrusade
 
         private static void Engine()
         {
-
             var baba = new GrandMom(48, 23);
             var parliament = new Parliament(40, 2);
             var garden1 = new Garden(5, 2);

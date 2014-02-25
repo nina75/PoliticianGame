@@ -15,7 +15,8 @@ namespace PoliticianCrusade
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
 
-        //static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        
         public GrandMom(int x, int y)
             : base(x, y)
         {
@@ -27,7 +28,7 @@ namespace PoliticianCrusade
             this.Gun = new Gun();
         }
 
-        //public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
+        public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
 
         public List<GameObject> EnemyList 
         {
@@ -45,6 +46,7 @@ namespace PoliticianCrusade
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
+                
                 
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
@@ -78,7 +80,7 @@ namespace PoliticianCrusade
                     if (base.CoordY == 9 && this.IsSpaceAvailable())
                     {
                         base.ClearImg();
-                        base.CoordY--;
+                        base.CoordY -= 3;
                         base.RenderImg();
                     }
                 }
@@ -96,7 +98,7 @@ namespace PoliticianCrusade
                 if (userInput.Key == ConsoleKey.Spacebar)
                 {
                     Character enemy = this.EnemyInRange();
-                    //Character baba = new GrandMom();
+                    Character baba = new GrandMom();
                     if (enemy as Character != null)
                     {
                         if (enemy.Health <= 0)
@@ -108,25 +110,26 @@ namespace PoliticianCrusade
                             //this.Bag.RemainingPower -= 10;  testing purposes
 
                             this.Money.Quantity += 100;
+                            
                         }
                         else
                         {
                             
                             this.EnemyInRange().Health -= 100;
 
-                           //if(this.Health == 0)
-                           //{
-                           //    //DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?","PoliticianCrusade", MessageBoxButtons.YesNo);
+                            if (this.Health == 0)
+                            {
+                                DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
-                           //    //if(res == DialogResult.Yes)
-                           //    //{
-                           //    //    restartGame = true;
-                           //    //}
-                           //    //else
-                           //    //{
-                           //    //    Environment.Exit(0);
-                           //    //}
-                           //}
+                                if (res == DialogResult.Yes)
+                                {
+                                    restartGame = true;
+                                }
+                                else
+                                {
+                                    Environment.Exit(0);
+                                }
+                            }
                             
                             
                             
@@ -220,8 +223,13 @@ namespace PoliticianCrusade
         private bool IsSpaceAvailable()
         {
             return (CoordX > 7 && CoordX < 18) ||
-                   (CoordX > 75 && CoordX < 86);
+                   (CoordX > 75 && CoordX < 86) ||
+                    CoordX == 31 ||
+                    CoordX == 64 
+                   ;
         }
+
+      
         public override char[,] GetImage()
         {
             return new char[,] {
