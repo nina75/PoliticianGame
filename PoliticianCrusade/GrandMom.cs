@@ -99,9 +99,10 @@ namespace PoliticianCrusade
                     //Character baba = new GrandMom();
                     if (enemy as Character != null)
                     {
-                        if (this.EnemyInRange().Health <= 0)
+                        if (enemy.Health <= 0)
                         {
-                            this.EnemyInRange().isAlive = false;
+                            enemy.isAlive = false;
+                            enemy.ClearImg();
                             //baba.Health -= 50; // 
                             this.Money.Quantity += 100;
                             
@@ -179,6 +180,19 @@ namespace PoliticianCrusade
             return null;
         }
         #endregion
+
+        public List<IResource> AllResources()
+        {
+            var list = new List<IResource>();
+
+            list.Add(this.Money);
+            list.Add(this.Bag);
+            list.Add(this.Cane);
+            list.Add(this.Gun);
+            list.Add(this.Umbrella);
+
+            return list;
+        }
 
         #region DrawImage
         public override void RenderImg()
