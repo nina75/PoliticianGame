@@ -45,6 +45,7 @@ namespace PoliticianCrusade
         #region DrawImage
         public override char[,] GetImage()
         {
+
             return new char[,] { 
                                  { '|', '$', '|' } ,
                                  { '|', '$', '|' } ,
