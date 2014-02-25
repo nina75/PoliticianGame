@@ -110,10 +110,10 @@ namespace PoliticianCrusade
                         }
                         else
                         {
-                           
+                            baba.Health -= 50;
                             this.EnemyInRange().Health -= 100;
 
-                            if (this.Health == 0)
+                            if (baba.Health == 0)
                             {
                                 DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
