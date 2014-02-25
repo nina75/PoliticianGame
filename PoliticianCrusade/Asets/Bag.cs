@@ -6,7 +6,7 @@ namespace PoliticianCrusade
 {
     public class Bag : StaticObject, IResource
     {
-        public const int Price = 200;
+        public readonly int Price = 200;
         private static int xCoord = 68;
         private static int yCoord = 35;
         

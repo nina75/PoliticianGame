@@ -118,10 +118,6 @@ namespace PoliticianCrusade
                         {
                             
                             this.EnemyInRange().Health -= 100;
-
-                            
-                            
-                            
                             
                         }
                      }
@@ -195,10 +191,10 @@ namespace PoliticianCrusade
             var list = new List<IResource>();
 
             list.Add(this.Money);
-            list.Add(this.Bag);
             list.Add(this.Cane);
-            list.Add(this.Gun);
+            list.Add(this.Bag);
             list.Add(this.Umbrella);
+            list.Add(this.Gun);
 
             return list;
         }

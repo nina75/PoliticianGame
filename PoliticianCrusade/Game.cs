@@ -78,6 +78,68 @@ namespace PoliticianCrusade
                 Console.SetCursorPosition(10, 38);
                 Console.Write("{0, 3}", baba.Health);
 
+                //Baba meets the BGMama
+                if (baba.CoordX == 31 && baba.CoordY == 6)
+                {
+                     DialogResult result = MessageBox.Show("Want to buy a gun?", "PoliticianCrusade", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (baba.Money.Quantity >= baba.Gun.Price)
+                        {
+                            if (true)
+                            {
+                                baba.Gun.RemainingPower = 100;
+                                baba.Money.Quantity -= baba.Gun.Price;
+                            }
+                            else
+                            {
+                                MessageBox.Show("You have full gun power");     
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("You don't have enough money");
+                        }
+                    }
+                    baba.ClearImg();
+                    baba.CoordY += 3;
+                    baba.RenderImg();
+                    Console.SetCursorPosition(30, 4);
+                    mom.RenderImg();
+                }
+
+                //Baba meets the walker
+                if (baba.CoordX == 64 && baba.CoordY == 6)
+                {
+                    DialogResult result = MessageBox.Show("Want to buy a bag?", "PoliticianCrusade", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (baba.Money.Quantity >= baba.Bag.Price)
+                        {
+                            if (baba.Bag.RemainingPower < 100)
+                            {
+                                baba.Bag.RemainingPower = 100;
+                                baba.Money.Quantity -= baba.Bag.Price; 
+                            }
+                            else
+                            {
+                                MessageBox.Show("You have full bag power");   
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("You don't have enough money");
+                        }
+                    }
+                    baba.ClearImg();
+                    baba.CoordY += 3;
+                    baba.RenderImg();
+                    Console.SetCursorPosition(64, 4);
+                    walker.RenderImg();
+                }
+                
                 //crash with policemen
                 for (int i = 0; i < 3; i++)
                 {
@@ -90,7 +152,7 @@ namespace PoliticianCrusade
                             (baba.CoordX + i == policeman2.CoordX + 1 && baba.CoordY + j == policeman2.CoordY + 1)|| 
                             (baba.CoordX + i == policeman2.CoordX + 2 && baba.CoordY + j == policeman2.CoordY + 2)) 
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(200);
                             if (baba.Bag.RemainingPower > 0)
                             {
                                  baba.Bag.RemainingPower -= 20;
@@ -120,7 +182,7 @@ namespace PoliticianCrusade
                             (baba.CoordX + i == politician3.CoordX + 1 && baba.CoordY + j == politician3.CoordY + 1) ||
                             (baba.CoordX + i == politician3.CoordX + 2 && baba.CoordY + j == politician3.CoordY + 2))
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(200);
                             if (baba.Umbrella.RemainingPower > 0)
                             {
                                 baba.Umbrella.RemainingPower -= 10;
@@ -132,12 +194,11 @@ namespace PoliticianCrusade
                             }
                             baba.RenderImg();
                         }
-
-                        
                     }
                 }
+
             // if baba no weapons , baba become ill
-            // if baba health == 0, baba dead and game over
+            // if baba health == 0, baba is dead and game over
                 if (baba.Cane.RemainingPower == 0 &&
                     baba.Bag.RemainingPower == 0 &&
                     baba.Umbrella.RemainingPower == 0 &&

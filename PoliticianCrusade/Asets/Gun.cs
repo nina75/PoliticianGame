@@ -6,7 +6,7 @@ namespace PoliticianCrusade
 {
     public class Gun : StaticObject, IResource
     {
-        public const int Price = 250;
+        public readonly int Price = 50;
         private static int xCoord = 92;
         private static int yCoord = 35;
 

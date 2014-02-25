@@ -8,7 +8,7 @@ namespace PoliticianCrusade
 {
     public class Cane : StaticObject, IResource
     {
-        public const int Price = 100;
+        public readonly int Price = 100;
         protected static int xCoord = 57;
         private static int yCoord = 34;
        

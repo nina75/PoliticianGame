@@ -8,7 +8,7 @@ namespace PoliticianCrusade
         private static int xCoord = 81;
         private static int yCoord = 34;
 
-        public const int Price = 150;
+        public readonly int Price = 150;
        
         public Umbrella() 
                 : base(xCoord, yCoord)
