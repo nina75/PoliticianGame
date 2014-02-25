@@ -41,7 +41,7 @@ namespace PoliticianCrusade
             Console.WriteLine("Bag:      {0, 3} %  DOWN  ", baba.Bag.RemainingPower);
             Console.WriteLine("Umbrella: {0, 3} %  LEFT ", baba.Umbrella.RemainingPower);
             Console.WriteLine("Gun:      {0, 3} %  RIGHT", baba.Gun.RemainingPower);
-
+            Console.WriteLine("Health:   {0, 3} %", baba.Health);
             var objects =
                 new List<GameObject>()
                 {

@@ -95,6 +95,7 @@ namespace PoliticianCrusade
                 if (userInput.Key == ConsoleKey.Spacebar)
                 {
                     Character enemy = this.EnemyInRange();
+
                     if (enemy as Character != null)
                     {
                         if (this.EnemyInRange().Health <= 0)
