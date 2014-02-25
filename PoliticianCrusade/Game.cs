@@ -75,8 +75,89 @@ namespace PoliticianCrusade
                 Console.SetCursorPosition(10, 38);
                 Console.Write("{0, 3}", baba.Health);
 
+                //crash with policemen
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if ((baba.CoordX + i == policeman1.CoordX && baba.CoordY + j == policeman1.CoordY) ||
+                            (baba.CoordX + i == policeman1.CoordX + 1 && baba.CoordY + j == policeman1.CoordY + 1) ||
+                            (baba.CoordX + i == policeman1.CoordX + 21 && baba.CoordY + j == policeman1.CoordY + 2) || 
+                            (baba.CoordX + i == policeman2.CoordX && baba.CoordY + j == policeman2.CoordY) || 
+                            (baba.CoordX + i == policeman2.CoordX + 1 && baba.CoordY + j == policeman2.CoordY + 1)|| 
+                            (baba.CoordX + i == policeman2.CoordX + 2 && baba.CoordY + j == policeman2.CoordY + 2)) 
+                        {
+                            Thread.Sleep(500);
+                            if (baba.Bag.RemainingPower > 0)
+                            {
+                                 baba.Bag.RemainingPower -= 20;
+                            }
+
+                            if (baba.Cane.RemainingPower > 0)
+                            {
+                                baba.Cane.RemainingPower -= 10;
+                            }
+                            baba.RenderImg();
+                        }
+                    }
+                }
+
+                //crash with politicians
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if ((baba.CoordX + i == politician1.CoordX && baba.CoordY + j == politician1.CoordY) ||
+                            (baba.CoordX + i == politician1.CoordX + 1 && baba.CoordY + j == politician1.CoordY + 1) ||
+                            (baba.CoordX + i == politician1.CoordX + 2 && baba.CoordY + j == politician1.CoordY + 2) ||
+                            (baba.CoordX + i == politician2.CoordX && baba.CoordY + j == politician2.CoordY) ||
+                            (baba.CoordX + i == politician2.CoordX + 1 && baba.CoordY + j == politician2.CoordY + 1) ||
+                            (baba.CoordX + i == politician2.CoordX + 2 && baba.CoordY + j == politician2.CoordY + 2) ||
+                            (baba.CoordX + i == politician3.CoordX && baba.CoordY + j == politician3.CoordY) ||
+                            (baba.CoordX + i == politician3.CoordX + 1 && baba.CoordY + j == politician3.CoordY + 1) ||
+                            (baba.CoordX + i == politician3.CoordX + 2 && baba.CoordY + j == politician3.CoordY + 2))
+                        {
+                            Thread.Sleep(500);
+                            if (baba.Umbrella.RemainingPower > 0)
+                            {
+                                baba.Umbrella.RemainingPower -= 10;
+                            }
+
+                            if (baba.Gun.RemainingPower > 0)
+                            {
+                                baba.Gun.RemainingPower -= 20;
+                            }
+                            baba.RenderImg();
+                        }
+
+                        
+                    }
+                }
+            // if baba no weapons , baba become ill
+            // if baba health == 0, baba dead and game over
+                if (baba.Cane.RemainingPower == 0 &&
+                    baba.Bag.RemainingPower == 0 &&
+                    baba.Umbrella.RemainingPower == 0 &&
+                    baba.Gun.RemainingPower == 0)
+                {
+                    if (baba.Health > 0)
+                    {
+                        baba.Health -= 20;
+                    }
+
+                    if (baba.Health == 0)
+                    {
+                        break;
+                    }
+                }
+
+
                 Thread.Sleep(100);
             }
+            Console.SetCursorPosition(47, 20);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("GAME OVER");
+
         }
 
         private static void UpdateResource(IEnumerable<IResource> allResources)
@@ -91,5 +172,7 @@ namespace PoliticianCrusade
                 Console.Write("{0, 3}", resource.RemainingPower);
             }  
         }
+
+       
     }
 }

@@ -228,7 +228,9 @@ namespace PoliticianCrusade
                     CoordX == 64 
                    ;
         }
-
+               
+         
+      
       
         public override char[,] GetImage()
         {
