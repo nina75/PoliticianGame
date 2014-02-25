@@ -27,7 +27,9 @@ namespace PoliticianCrusade
             this.Gun = new Gun();
         }
 
-        public GrandMom() { } //AN: празен конструктор? явно не е необходим щом работи без него :)
+        public GrandMom() 
+        {
+        } 
 
         public List<GameObject> EnemyList 
         {
@@ -198,7 +200,7 @@ namespace PoliticianCrusade
             return list;
         }
 
-        #region DrawImage
+        #region DrawObjectMethods
         public override void RenderImg()
         {
             Console.ForegroundColor = ConsoleColor.Red;
