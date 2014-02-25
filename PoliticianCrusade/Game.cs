@@ -67,6 +67,8 @@ namespace PoliticianCrusade
                 politician2.MoveBack(97, 15);
                 politician3.Move(0, 18);
 
+                //Baba meet 
+
                 Thread.Sleep(100);
             }
         }

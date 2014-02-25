@@ -45,6 +45,7 @@ namespace PoliticianCrusade
                 while (Console.KeyAvailable)
                     Console.ReadKey(true);
                 
+                
                 if (userInput.Key == ConsoleKey.RightArrow)
                 {
                     if (base.CoordX < Game.MaxWidth - 4) 
@@ -77,7 +78,7 @@ namespace PoliticianCrusade
                     if (base.CoordY == 9 && this.IsSpaceAvailable())
                     {
                         base.ClearImg();
-                        base.CoordY--;
+                        base.CoordY -= 3;
                         base.RenderImg();
                     }
                 }
@@ -103,6 +104,7 @@ namespace PoliticianCrusade
                             this.EnemyInRange().isAlive = false;
                             //baba.Health -= 50; // 
                             this.Money.Quantity += 100;
+                            
                         }
                         else
                         {
@@ -188,8 +190,13 @@ namespace PoliticianCrusade
         private bool IsSpaceAvailable()
         {
             return (CoordX > 7 && CoordX < 18) ||
-                   (CoordX > 75 && CoordX < 86);
+                   (CoordX > 75 && CoordX < 86) ||
+                    CoordX == 31 ||
+                    CoordX == 64 
+                   ;
         }
+
+      
         public override char[,] GetImage()
         {
             return new char[,] {
