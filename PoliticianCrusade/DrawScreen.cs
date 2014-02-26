@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Text;
+using System.Threading;
 
 namespace PoliticianCrusade
 {
@@ -57,5 +60,20 @@ namespace PoliticianCrusade
                 Console.WriteLine('|');
             }
         }
+
+        public static void IntroPlayer(string stringWitPath)
+        {
+            //console init
+            Console.OutputEncoding = Encoding.Unicode;
+
+            using (StreamReader stream = new StreamReader(stringWitPath))
+            {
+                while (!stream.EndOfStream)
+                {
+                    Console.WriteLine(stream.ReadLine());
+                    Thread.Sleep(30);
+                }
+            }
+        } 
     }
 }

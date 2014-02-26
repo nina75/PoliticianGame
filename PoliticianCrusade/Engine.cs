@@ -238,5 +238,7 @@ namespace PoliticianCrusade
                 Console.Write("{0, 3}", resource.RemainingPower);
             }
         }
+
+
     }
 }
