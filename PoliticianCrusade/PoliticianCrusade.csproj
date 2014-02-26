@@ -51,7 +51,8 @@
     <Compile Include="Engine.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
-    <Compile Include="Enum\ResourceType.cs" />
+    <Compile Include="Interfaces\IWeapon.cs" />
+    <Compile Include="ResouceType.cs" />
     <Compile Include="StaticObjects\Garden.cs" />
     <Compile Include="GrandMom.cs" />
     <Compile Include="Asets\Gun.cs" />
