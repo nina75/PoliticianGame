@@ -17,15 +17,15 @@ namespace PoliticianCrusade
         #region Properties
         public int Quantity { get; set; }
 
-        public int RemainingPower
-        {
-            get
-            {
-                return this.Quantity;
-            }
+        //public int RemainingPower
+        //{
+        //    get
+        //    {
+        //        return this.Quantity;
+        //    }
 
-            set { this.Quantity = value; }
-        }
+        //    set { this.Quantity = value; }
+        //}
 
         public int WearPerUse
         {
