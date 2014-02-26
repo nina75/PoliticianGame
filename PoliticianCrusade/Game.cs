@@ -14,7 +14,6 @@ namespace PoliticianCrusade
         static string pathIntro = @"..\..\intro_screen.txt";
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
-
         
         static void Main()
         {
