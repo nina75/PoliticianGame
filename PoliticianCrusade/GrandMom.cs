@@ -14,8 +14,6 @@ namespace PoliticianCrusade
         public Bag Bag { get; private set; }
         public Umbrella Umbrella { get; private set; }
         public Gun Gun { get; private set; }
-
-        
         
         public GrandMom(int x, int y)
             : base(x, y)
@@ -38,6 +36,19 @@ namespace PoliticianCrusade
             {
                 return new List<GameObject>(this.enemyList);
             }
+        }
+
+         public List<IResource> AllResources()
+        {
+            var list = new List<IResource>();
+
+            list.Add(this.Money);
+            list.Add(this.Cane);
+            list.Add(this.Bag);
+            list.Add(this.Umbrella);
+            list.Add(this.Gun);
+
+            return list;
         }
 
         #region Action
@@ -175,19 +186,6 @@ namespace PoliticianCrusade
             return null;
         }
         #endregion
-
-        public List<IResource> AllResources()
-        {
-            var list = new List<IResource>();
-
-            list.Add(this.Money);
-            list.Add(this.Cane);
-            list.Add(this.Bag);
-            list.Add(this.Umbrella);
-            list.Add(this.Gun);
-
-            return list;
-        }
 
         #region DrawObjectMethods
         public override void RenderImg()
