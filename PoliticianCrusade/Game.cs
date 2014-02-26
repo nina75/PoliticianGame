@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace PoliticianCrusade
@@ -14,7 +9,6 @@ namespace PoliticianCrusade
         static string pathIntro = @"..\..\intro_screen.txt";
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
-
         
         static void Main()
         {

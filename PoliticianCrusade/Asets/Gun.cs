@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PoliticianCrusade
 {
-    public class Gun : StaticObject, IResource
+    public class Gun : StaticObject, IResource, IWeapon
     {
         public readonly int Price = 50;
         private static int xCoord = 92;
@@ -21,7 +21,16 @@ namespace PoliticianCrusade
         {
             get { return ResourceType.Weapon; }
         }
-        
+
+        public int WearPerUse
+        {
+            get { return 100; }
+        }
+
+        public int Damage
+        {
+            get { return 150; }
+        }
 
         public int RemainingPower
         {

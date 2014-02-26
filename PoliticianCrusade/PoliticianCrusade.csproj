@@ -51,7 +51,8 @@
     <Compile Include="Engine.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
-    <Compile Include="ResourceType.cs" />
+    <Compile Include="Interfaces\IWeapon.cs" />
+    <Compile Include="Enum\ResouceType.cs" />
     <Compile Include="StaticObjects\Garden.cs" />
     <Compile Include="GrandMom.cs" />
     <Compile Include="Asets\Gun.cs" />
@@ -71,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Misc\ClassDiagram1.cd" />
+    <None Include="Misc\ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="intro_screen.txt" />

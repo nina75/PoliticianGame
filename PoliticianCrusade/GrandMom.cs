@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -38,11 +39,10 @@ namespace PoliticianCrusade
             }
         }
 
-         public List<IResource> AllResources()
+         public List<IWeapon> AllWeapons()
         {
-            var list = new List<IResource>();
+            var list = new List<IWeapon>();
 
-            list.Add(this.Money);
             list.Add(this.Cane);
             list.Add(this.Bag);
             list.Add(this.Umbrella);
@@ -108,28 +108,24 @@ namespace PoliticianCrusade
                     }
                 }
 
-                if (userInput.Key == ConsoleKey.Spacebar)
+                if (userInput.Key == ConsoleKey.A)
                 {
-                    Character enemy = this.EnemyInRange();
-                    Character baba = new GrandMom();
-                    if (enemy as Character != null)
-                    {
-                        if (enemy.Health <= 0)
-                        {
-                            enemy.isAlive = false;
-                            enemy.ClearImg();
+                    this.AttackNearbyEnemy(this.Cane, 5);
+                }
 
-                            //this.Health -= 5;               testing purposes
-                            //this.Bag.RemainingPower -= 10;  testing purposes
+                if (userInput.Key == ConsoleKey.S)
+                {
+                    this.AttackNearbyEnemy(this.Bag, 3);
+                }
 
-                            this.Money.Quantity += 100;
-                            
-                        }
-                        else
-                        {
-                            this.EnemyInRange().Health -= 100;
-                        }
-                     }
+                if (userInput.Key == ConsoleKey.D)
+                {
+                    this.AttackNearbyEnemy(this.Umbrella, 7);
+                }
+
+                if (userInput.Key == ConsoleKey.F)
+                {
+                    this.AttackNearbyEnemy(this.Gun, 15);
                 }
             }
         }
@@ -143,9 +139,43 @@ namespace PoliticianCrusade
             this.enemyList.AddRange(enemies);
         }
 
-        private Character EnemyInRange()
+        private void AttackNearbyEnemy(IWeapon weapon, int hitRange)
         {
-            const int hitRange = 5;
+            if (weapon.RemainingPower <= 0)
+            {
+                return;
+            }
+
+            Character enemy = this.EnemyInRange(hitRange);
+            //Character baba = new GrandMom();
+            if (enemy as Character != null)
+            {
+                if (enemy.Health <= 0)
+                {
+                    enemy.isAlive = false;
+                    enemy.ClearImg(true);
+
+                    this.Money.Quantity += 100;
+                }
+                else
+                {
+                    enemy.Health -= weapon.Damage;
+                    weapon.RemainingPower -= weapon.WearPerUse;
+
+                    if (enemy.Health <= 0)
+                    {
+                        enemy.isAlive = false;
+                        enemy.ClearImg(true);
+
+                        this.Money.Quantity += 100;
+                    }
+                }
+            }
+        }
+
+        private Character EnemyInRange(int hitRange)
+        {
+            //const int hitRange = 5;
 
             int startScanX = this.CoordX - hitRange;
             int endScanX = this.CoordX + hitRange;

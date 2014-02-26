@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PoliticianCrusade
 {
-    public class Umbrella : StaticObject, IResource
+    public class Umbrella : StaticObject, IResource, IWeapon
     {
         private static int xCoord = 81;
         private static int yCoord = 34;
@@ -18,6 +18,17 @@ namespace PoliticianCrusade
 
         #region Properties
         public int RemainingPower { get; set; }
+
+        public int WearPerUse
+        {
+            get { return 25; }
+        }
+
+        public int Damage
+        {
+            get { return 60; }
+        }
+
         public ResourceType Type
         {
             get { return ResourceType.Weapon; }
