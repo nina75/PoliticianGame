@@ -254,6 +254,5 @@ namespace PoliticianCrusade
             Console.SetCursorPosition(10, 34 + newLiner);
             Console.Write("{0, 3}", baba.Health);
         }
-
     }
 }
