@@ -31,7 +31,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PoliticianCrusade.DrawScreen" Collapsed="true">
-    <Position X="12" Y="1.25" Width="1.5" />
+    <Position X="12" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>DrawScreen.cs</FileName>
@@ -40,7 +40,7 @@
   <Class Name="PoliticianCrusade.Game" Collapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAABAAABAAAEBA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEBA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -62,7 +62,7 @@
   <Class Name="PoliticianCrusade.GrandMom" Collapsed="true">
     <Position X="9.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AESQAAQAAKgAAAEAAAAAAAAQAAAAIAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AESQAAQAAKhAAAEAAAAAAAAQAAAAIAAAAAAAAAAAgAA=</HashCode>
       <FileName>GrandMom.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -128,22 +128,29 @@
       <FileName>Walker.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="PoliticianCrusade.Engine" Collapsed="true">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="PoliticianCrusade.IMovable" Collapsed="true">
-    <Position X="12" Y="2.75" Width="1.5" />
+    <Position X="12" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMovable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PoliticianCrusade.IRenderable" Collapsed="true">
-    <Position X="12" Y="2" Width="1.5" />
+    <Position X="12" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IRenderable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PoliticianCrusade.IResource" Collapsed="true">
-    <Position X="12" Y="3.5" Width="1.5" />
+    <Position X="12" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IResource.cs</FileName>
