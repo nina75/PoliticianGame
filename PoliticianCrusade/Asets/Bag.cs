@@ -23,6 +23,12 @@ namespace PoliticianCrusade
             get;
             set;
         }
+
+        public int WearPerUse
+        {
+            get { return 20; }
+        }
+
         public ResourceType Type
         {
             get { return ResourceType.Weapon; }

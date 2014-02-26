@@ -18,6 +18,12 @@ namespace PoliticianCrusade
 
         #region Properties
         public int RemainingPower { get; set; }
+
+        public int WearPerUse
+        {
+            get { return 25; }
+        }
+
         public ResourceType Type
         {
             get { return ResourceType.Weapon; }
