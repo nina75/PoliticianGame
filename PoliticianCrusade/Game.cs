@@ -21,18 +21,16 @@ namespace PoliticianCrusade
         static void Main()
         {
             Console.BufferHeight = Console.WindowHeight = MaxHeight;
-            Console.BufferWidth = Console.WindowWidth = MaxWidth;
-
+            Console.BufferWidth = Console.WindowWidth = 70;
+            
             DrawScreen.IntroPlayer(pathIntro);
 
             Console.ReadKey();
             Console.Clear();
 
+            Console.BufferWidth = Console.WindowWidth = MaxWidth;
+
             Engine.Action();
         }
-
-        
-
-      
     }
 }
