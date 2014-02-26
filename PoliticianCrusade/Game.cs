@@ -28,8 +28,6 @@ namespace PoliticianCrusade
             Engine.Action();
         }
 
-        
-
         #region IntroPlayer
         public static void IntroPlayer(string stringWitPath)
         {
