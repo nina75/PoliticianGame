@@ -32,6 +32,8 @@ namespace PoliticianCrusade
             Console.WriteLine("Umbrella:     %  LEFT ");
             Console.WriteLine("Gun:          %  RIGHT");
             Console.WriteLine("Health:       %");
+            
+            
             var objects =
                 new List<GameObject>()
                 {
@@ -41,6 +43,7 @@ namespace PoliticianCrusade
 
             baba.AddEnemies(objects);
 
+            //Using polumorphism
             foreach (var obj in objects)
             {
                 obj.RenderImg();
@@ -219,10 +222,10 @@ namespace PoliticianCrusade
             {
                 Environment.Exit(0);
             }
-            //Console.WriteLine("GAME OVER");
 
         }
 
+        //Using polymorphism
         private static void UpdateResource(IEnumerable<IResource> allResources)
         {
             int newLiner = 0;

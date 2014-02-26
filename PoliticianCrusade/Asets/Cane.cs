@@ -24,16 +24,11 @@ namespace PoliticianCrusade
             get;
             set;
         }
-
-        public int CoordXOnScreen
+        public ResourceType Type
         {
-            get { return 10; }
+            get { return ResourceType.Weapon; }
         }
 
-        public int CoordYOnScreen
-        {
-            get { return 35; }
-        } 
         #endregion
 
         #region DrawImageMethods

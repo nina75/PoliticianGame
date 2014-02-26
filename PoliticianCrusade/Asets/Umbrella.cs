@@ -18,22 +18,11 @@ namespace PoliticianCrusade
 
         #region Properties
         public int RemainingPower { get; set; }
-
-        public int CoordXOnScreen
+        public ResourceType Type
         {
-            get
-            {
-                return 10;
-            }
+            get { return ResourceType.Weapon; }
         }
 
-        public int CoordYOnScreen
-        {
-            get
-            {
-                return 37;
-            }
-        } 
         #endregion
 
         #region DrawImageMethods
