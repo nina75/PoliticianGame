@@ -20,7 +20,7 @@ namespace PoliticianCrusade
         {
             Console.BufferHeight = Console.WindowHeight = MaxHeight;
             Console.BufferWidth = Console.WindowWidth = 70;
-            
+
             DrawScreen.IntroPlayer(pathIntro);
 
             Console.ReadKey();
