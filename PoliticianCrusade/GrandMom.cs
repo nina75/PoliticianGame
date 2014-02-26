@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -38,11 +39,10 @@ namespace PoliticianCrusade
             }
         }
 
-         public List<IResource> AllResources()
+         public List<IWeapon> AllWeapons()
         {
-            var list = new List<IResource>();
+            var list = new List<IWeapon>();
 
-            list.Add(this.Money);
             list.Add(this.Cane);
             list.Add(this.Bag);
             list.Add(this.Umbrella);
@@ -139,7 +139,7 @@ namespace PoliticianCrusade
             this.enemyList.AddRange(enemies);
         }
 
-        private void AttackNearbyEnemy(IResource weapon, int hitRange)
+        private void AttackNearbyEnemy(IWeapon weapon, int hitRange)
         {
             if (weapon.RemainingPower <= 0)
             {
@@ -155,15 +155,20 @@ namespace PoliticianCrusade
                     enemy.isAlive = false;
                     enemy.ClearImg(true);
 
-                    //this.Health -= 5;               // testing purposes
-                    //this.Bag.RemainingPower -= 10;  // testing purposes
-
                     this.Money.Quantity += 100;
                 }
                 else
                 {
-                    enemy.Health -= 100;
+                    enemy.Health -= weapon.Damage;
                     weapon.RemainingPower -= weapon.WearPerUse;
+
+                    if (enemy.Health <= 0)
+                    {
+                        enemy.isAlive = false;
+                        enemy.ClearImg(true);
+
+                        this.Money.Quantity += 100;
+                    }
                 }
             }
         }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PoliticianCrusade
 {
-    public class Bag : StaticObject, IResource
+    public class Bag : StaticObject, IResource, IWeapon
     {
         public readonly int Price = 200;
         private static int xCoord = 68;
@@ -27,6 +27,11 @@ namespace PoliticianCrusade
         public int WearPerUse
         {
             get { return 20; }
+        }
+
+        public int Damage
+        {
+            get { return 40; }
         }
 
         public ResourceType Type
@@ -53,8 +58,5 @@ namespace PoliticianCrusade
             base.RenderImg();
         } 
         #endregion
-
-
-        
     }
 }

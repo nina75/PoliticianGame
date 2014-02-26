@@ -49,7 +49,7 @@ namespace PoliticianCrusade
                 obj.RenderImg();
             }
 
-            var allResources = baba.AllResources();
+            var allWeapons = baba.AllWeapons();
 
             while (true)
             {
@@ -62,7 +62,7 @@ namespace PoliticianCrusade
                 politician2.MoveBack(97, 15);
                 politician3.Move(0, 18);
 
-                UpdateResource(allResources, baba);
+                UpdateResource(allWeapons, baba);
 
                 //Baba meets the BGMama
                 if (baba.CoordX == 31 && baba.CoordY == 6)
@@ -236,19 +236,22 @@ namespace PoliticianCrusade
         }
 
         //Using polymorphism
-        private static void UpdateResource(IEnumerable<IResource> allResources, GrandMom baba)
+        private static void UpdateResource(IEnumerable<IWeapon> allResources, GrandMom baba)
         {
             int newLiner = 0;
 
+            Console.ForegroundColor = ConsoleColor.Gray;
+
+            Console.SetCursorPosition(10, 33);
+            Console.Write("{0, 3}", baba.Money.Quantity);
+
             foreach (var resource in allResources)
             {
-                Console.SetCursorPosition(10, 33 + newLiner++);
-                Console.ForegroundColor = ConsoleColor.Gray;
-
+                Console.SetCursorPosition(10, 34 + newLiner++);
                 Console.Write("{0, 3}", resource.RemainingPower);
             }
 
-            Console.SetCursorPosition(10, 38);
+            Console.SetCursorPosition(10, 34 + newLiner);
             Console.Write("{0, 3}", baba.Health);
         }
 
