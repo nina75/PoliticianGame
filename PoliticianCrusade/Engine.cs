@@ -216,7 +216,7 @@ namespace PoliticianCrusade
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Action();
-                //restartGame = true;
+                
             }
             else
             {
