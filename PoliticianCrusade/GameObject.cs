@@ -2,7 +2,7 @@
 
 namespace PoliticianCrusade
 {
-    public abstract class GameObject : IRenderable
+    public abstract class GameObject : IGameObject,  IRenderable
     {
         protected GameObject(int x, int y)
         {

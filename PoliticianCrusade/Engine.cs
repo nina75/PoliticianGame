@@ -1,36 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PoliticianCrusade
 {
-    [Version ("000.830")]
-    public class Game
+    public static class Engine
     {
-        static bool restartGame = false; // Dinko: Още го размишлявам! Недейте да триете закоментираните редове!
-        static string pathIntro = @"..\..\intro_screen.txt";
-        public const int MaxHeight = 40;
-        public const int MaxWidth = 100;
-
-        //static char[,] playerField = new char[MaxHeight, MaxWidth]; //Dinko:
-        
-        static void Main()
+        public static void Action()
         {
-            IntroPlayer(pathIntro);
-
-            Console.BufferHeight = Console.WindowHeight = MaxHeight;
-            Console.BufferWidth = Console.WindowWidth = MaxWidth;
-
-            Engine();
-        }
-
-        #region Engine
-        private static void Engine()
-        {
+            DrawScreen.DrawConsoleBottom();
             var baba = new GrandMom(48, 23);
             var parliament = new Parliament(40, 2);
             var garden1 = new Garden(5, 2);
@@ -50,6 +32,8 @@ namespace PoliticianCrusade
             Console.WriteLine("Umbrella:     %  LEFT ");
             Console.WriteLine("Gun:          %  RIGHT");
             Console.WriteLine("Health:       %");
+            
+            
             var objects =
                 new List<GameObject>()
                 {
@@ -59,6 +43,7 @@ namespace PoliticianCrusade
 
             baba.AddEnemies(objects);
 
+            //Using polumorphism
             foreach (var obj in objects)
             {
                 obj.RenderImg();
@@ -82,6 +67,68 @@ namespace PoliticianCrusade
                 Console.SetCursorPosition(10, 38);
                 Console.Write("{0, 3}", baba.Health);
 
+                //Baba meets the BGMama
+                if (baba.CoordX == 31 && baba.CoordY == 6)
+                {
+                    DialogResult result = MessageBox.Show("Want to buy a gun?", "PoliticianCrusade", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (baba.Money.Quantity >= baba.Gun.Price)
+                        {
+                            if (true)
+                            {
+                                baba.Gun.RemainingPower = 100;
+                                baba.Money.Quantity -= baba.Gun.Price;
+                            }
+                            else
+                            {
+                                MessageBox.Show("You have full gun power");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("You don't have enough money");
+                        }
+                    }
+                    baba.ClearImg();
+                    baba.CoordY += 3;
+                    baba.RenderImg();
+                    Console.SetCursorPosition(30, 4);
+                    mom.RenderImg();
+                }
+
+                //Baba meets the walker
+                if (baba.CoordX == 64 && baba.CoordY == 6)
+                {
+                    DialogResult result = MessageBox.Show("Want to buy a bag?", "PoliticianCrusade", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (baba.Money.Quantity >= baba.Bag.Price)
+                        {
+                            if (baba.Bag.RemainingPower < 100)
+                            {
+                                baba.Bag.RemainingPower = 100;
+                                baba.Money.Quantity -= baba.Bag.Price;
+                            }
+                            else
+                            {
+                                MessageBox.Show("You have full bag power");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("You don't have enough money");
+                        }
+                    }
+                    baba.ClearImg();
+                    baba.CoordY += 3;
+                    baba.RenderImg();
+                    Console.SetCursorPosition(64, 4);
+                    walker.RenderImg();
+                }
+
                 //crash with policemen
                 for (int i = 0; i < 3; i++)
                 {
@@ -94,7 +141,7 @@ namespace PoliticianCrusade
                             (baba.CoordX + i == policeman2.CoordX + 1 && baba.CoordY + j == policeman2.CoordY + 1) ||
                             (baba.CoordX + i == policeman2.CoordX + 2 && baba.CoordY + j == policeman2.CoordY + 2))
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(200);
                             if (baba.Bag.RemainingPower > 0)
                             {
                                 baba.Bag.RemainingPower -= 20;
@@ -124,7 +171,7 @@ namespace PoliticianCrusade
                             (baba.CoordX + i == politician3.CoordX + 1 && baba.CoordY + j == politician3.CoordY + 1) ||
                             (baba.CoordX + i == politician3.CoordX + 2 && baba.CoordY + j == politician3.CoordY + 2))
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(200);
                             if (baba.Umbrella.RemainingPower > 0)
                             {
                                 baba.Umbrella.RemainingPower -= 10;
@@ -138,37 +185,47 @@ namespace PoliticianCrusade
                         }
                     }
                 }
+
                 // if baba no weapons , baba become ill
-                // if baba health == 0, baba dead and game over
+                // if baba health == 0, baba is dead and game over
                 if (baba.Cane.RemainingPower == 0 &&
                     baba.Bag.RemainingPower == 0 &&
                     baba.Umbrella.RemainingPower == 0 &&
                     baba.Gun.RemainingPower == 0)
                 {
                     if (baba.Health > 0)
+                    {
                         baba.Health -= 20;
+                    }
 
                     if (baba.Health == 0)
+                    {
                         break;
+                    }
                 }
+
 
                 Thread.Sleep(100);
             }
-
             Console.SetCursorPosition(47, 20);
             Console.ForegroundColor = ConsoleColor.Red;
             DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
             if (res == DialogResult.Yes)
-                restartGame = true;
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Action();
+                //restartGame = true;
+            }
             else
+            {
                 Environment.Exit(0);
+            }
 
-            Console.WriteLine("GAME OVER");
-        } 
-        #endregion
+        }
 
-        #region Update
+        //Using polymorphism
         private static void UpdateResource(IEnumerable<IResource> allResources)
         {
             int newLiner = 0;
@@ -180,29 +237,6 @@ namespace PoliticianCrusade
 
                 Console.Write("{0, 3}", resource.RemainingPower);
             }
-        } 
-        #endregion
-
-        #region IntroPlayer
-        public static void IntroPlayer(string stringWitPath)
-        {
-            //console init
-            Console.BufferHeight = Console.WindowHeight = 40;
-            Console.BufferWidth = Console.WindowWidth = 80;
-            Console.OutputEncoding = Encoding.Unicode;
-
-            using (StreamReader stream = new StreamReader(stringWitPath))
-            {
-                while (!stream.EndOfStream)
-                {
-                    Console.WriteLine(stream.ReadLine());
-                    Thread.Sleep(30);
-                }
-            }
-       
-            Console.ReadKey();
-            Console.Clear();
-        } 
-        #endregion
+        }
     }
 }

@@ -48,7 +48,10 @@
     <Compile Include="Asets\Cane.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="DrawScreen.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="Interfaces\IGameObject.cs" />
+    <Compile Include="ResourceType.cs" />
     <Compile Include="StaticObjects\Garden.cs" />
     <Compile Include="GrandMom.cs" />
     <Compile Include="Asets\Gun.cs" />

@@ -6,7 +6,7 @@ namespace PoliticianCrusade
 {
     public class Gun : StaticObject, IResource
     {
-        public const int Price = 250;
+        public readonly int Price = 50;
         private static int xCoord = 92;
         private static int yCoord = 35;
 
@@ -17,21 +17,11 @@ namespace PoliticianCrusade
         }
 
         #region Properties
-        public int CoordXOnScreen
+        public ResourceType Type
         {
-            get
-            {
-                return 10;
-            }
+            get { return ResourceType.Weapon; }
         }
-
-        public int CoordYOnScreen
-        {
-            get
-            {
-                return 38;
-            }
-        }
+        
 
         public int RemainingPower
         {

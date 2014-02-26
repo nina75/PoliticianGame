@@ -8,7 +8,7 @@ namespace PoliticianCrusade
 {
     public class Cane : StaticObject, IResource
     {
-        public const int Price = 100;
+        public readonly int Price = 100;
         protected static int xCoord = 57;
         private static int yCoord = 34;
        
@@ -24,16 +24,11 @@ namespace PoliticianCrusade
             get;
             set;
         }
-
-        public int CoordXOnScreen
+        public ResourceType Type
         {
-            get { return 10; }
+            get { return ResourceType.Weapon; }
         }
 
-        public int CoordYOnScreen
-        {
-            get { return 35; }
-        } 
         #endregion
 
         #region DrawImageMethods

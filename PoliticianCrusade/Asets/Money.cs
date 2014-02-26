@@ -24,22 +24,11 @@ namespace PoliticianCrusade
                 return this.Quantity;
             }
         }
-
-        public int CoordXOnScreen
+        public ResourceType Type
         {
-            get
-            {
-                return 10;
-            }
+            get { return ResourceType.Payment; }
         }
 
-        public int CoordYOnScreen
-        {
-            get
-            {
-                return 7;
-            }
-        } 
         #endregion
 
         #region DrawImage
