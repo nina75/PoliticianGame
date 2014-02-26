@@ -53,6 +53,7 @@
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IWeapon.cs" />
     <Compile Include="Enum\ResouceType.cs" />
+    <Compile Include="Nsbob.cs" />
     <Compile Include="StaticObjects\Garden.cs" />
     <Compile Include="GrandMom.cs" />
     <Compile Include="Asets\Gun.cs" />
