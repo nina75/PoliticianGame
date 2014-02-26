@@ -30,9 +30,5 @@ namespace PoliticianCrusade
 
             Engine.Action();
         }
-
-        
-
-       
     }
 }

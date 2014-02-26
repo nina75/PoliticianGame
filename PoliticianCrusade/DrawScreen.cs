@@ -18,6 +18,7 @@ namespace PoliticianCrusade
             {
                 DrawVerticalLine(i);
             }
+            
             Console.SetCursorPosition(44, 33);
             Console.WriteLine("Money");
 
