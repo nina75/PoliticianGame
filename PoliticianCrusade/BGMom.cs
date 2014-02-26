@@ -11,7 +11,7 @@ namespace PoliticianCrusade
         {
         }
 
-        #region DrawObjectMethod
+        #region DrawObjectMethods
         public override char[,] GetImage()
         {
             return new char[,] {

@@ -15,7 +15,6 @@ namespace PoliticianCrusade
         {
             this.RemainingPower = 100;
         }
-        
 
         #region Properties
         public int RemainingPower
@@ -53,8 +52,5 @@ namespace PoliticianCrusade
             base.RenderImg();
         } 
         #endregion
-
-
-        
     }
 }

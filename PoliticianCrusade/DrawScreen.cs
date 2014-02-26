@@ -65,9 +65,7 @@ namespace PoliticianCrusade
         public static void IntroPlayer(string stringWitPath)
         {
             //console init
-            
             Console.OutputEncoding = Encoding.Unicode;
-
             using (StreamReader stream = new StreamReader(stringWitPath))
             {
                 while (!stream.EndOfStream)
@@ -76,8 +74,8 @@ namespace PoliticianCrusade
                     Thread.Sleep(30);
                 }
             }
-            Console.CursorVisible = false;
 
+            Console.CursorVisible = false;
         } 
     }
 }

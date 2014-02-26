@@ -16,7 +16,7 @@ namespace PoliticianCrusade
         public Gun Gun { get; private set; }
         
         public GrandMom(int x, int y)
-            : base(x, y)
+                : base(x, y)
         {
             this.enemyList = new List<GameObject>();
             this.Money = new Money();
@@ -38,7 +38,7 @@ namespace PoliticianCrusade
             }
         }
 
-         public List<IResource> AllResources()
+        public List<IResource> AllResources()
         {
             var list = new List<IResource>();
 
