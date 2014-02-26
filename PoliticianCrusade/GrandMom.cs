@@ -116,15 +116,9 @@ namespace PoliticianCrusade
                         }
                         else
                         {
-                            
                             this.EnemyInRange().Health -= 100;
-
-                            
-                            
-                            
-                            
                         }
-                     }
+                    }
                 }
             }
         }
@@ -133,7 +127,7 @@ namespace PoliticianCrusade
         {
             var enemies = 
                         objects.Where(o => o.GetType().Name == "Politician" 
-                                   || o.GetType().Name == "Policeman").ToList();
+                                        || o.GetType().Name == "Policeman").ToList();
 
             this.enemyList.AddRange(enemies);
         }
@@ -149,24 +143,16 @@ namespace PoliticianCrusade
             int endScanY = this.CoordY + hitRange;
 
             if (startScanX < 0)
-            {
                 startScanX = 0;
-            }
 
             if (endScanX > Console.WindowWidth)
-            {
                 endScanX = Console.WindowWidth;
-            }
 
             if (startScanY < 0)
-            {
                 startScanY = 0;
-            }
 
             if (endScanY > Console.WindowHeight)
-            {
                 endScanY = Console.WindowHeight;
-            }
 
             for (int i = startScanX; i < endScanX; i++)
             {

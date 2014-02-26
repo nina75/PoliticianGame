@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Threading;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PoliticianCrusade
 {
-    [Version ("000.820")]
-    
+    [Version ("000.830")]
     public class Game
     {
-        static bool restartGame = false; // Още го размишлявам! Недейте да триете закоментираните редове!
+        static bool restartGame = false; // Dinko: Още го размишлявам! Недейте да триете закоментираните редове!
+        static string pathIntro = @"..\..\intro_screen.txt";
         public const int MaxHeight = 40;
         public const int MaxWidth = 100;
 
@@ -18,6 +20,8 @@ namespace PoliticianCrusade
         
         static void Main()
         {
+            IntroPlayer(pathIntro);
+
             Console.BufferHeight = Console.WindowHeight = MaxHeight;
             Console.BufferWidth = Console.WindowWidth = MaxWidth;
             DrawScreen.DrawConsoleBottom();
@@ -25,6 +29,7 @@ namespace PoliticianCrusade
             Engine();
         }
 
+        #region Engine
         private static void Engine()
         {
             var baba = new GrandMom(48, 23);
@@ -85,15 +90,15 @@ namespace PoliticianCrusade
                     {
                         if ((baba.CoordX + i == policeman1.CoordX && baba.CoordY + j == policeman1.CoordY) ||
                             (baba.CoordX + i == policeman1.CoordX + 1 && baba.CoordY + j == policeman1.CoordY + 1) ||
-                            (baba.CoordX + i == policeman1.CoordX + 21 && baba.CoordY + j == policeman1.CoordY + 2) || 
-                            (baba.CoordX + i == policeman2.CoordX && baba.CoordY + j == policeman2.CoordY) || 
-                            (baba.CoordX + i == policeman2.CoordX + 1 && baba.CoordY + j == policeman2.CoordY + 1)|| 
-                            (baba.CoordX + i == policeman2.CoordX + 2 && baba.CoordY + j == policeman2.CoordY + 2)) 
+                            (baba.CoordX + i == policeman1.CoordX + 21 && baba.CoordY + j == policeman1.CoordY + 2) ||
+                            (baba.CoordX + i == policeman2.CoordX && baba.CoordY + j == policeman2.CoordY) ||
+                            (baba.CoordX + i == policeman2.CoordX + 1 && baba.CoordY + j == policeman2.CoordY + 1) ||
+                            (baba.CoordX + i == policeman2.CoordX + 2 && baba.CoordY + j == policeman2.CoordY + 2))
                         {
                             Thread.Sleep(500);
                             if (baba.Bag.RemainingPower > 0)
                             {
-                                 baba.Bag.RemainingPower -= 20;
+                                baba.Bag.RemainingPower -= 20;
                             }
 
                             if (baba.Cane.RemainingPower > 0)
@@ -132,47 +137,39 @@ namespace PoliticianCrusade
                             }
                             baba.RenderImg();
                         }
-
-                        
                     }
                 }
-            // if baba no weapons , baba become ill
-            // if baba health == 0, baba dead and game over
+                // if baba no weapons , baba become ill
+                // if baba health == 0, baba dead and game over
                 if (baba.Cane.RemainingPower == 0 &&
                     baba.Bag.RemainingPower == 0 &&
                     baba.Umbrella.RemainingPower == 0 &&
                     baba.Gun.RemainingPower == 0)
                 {
                     if (baba.Health > 0)
-                    {
                         baba.Health -= 20;
-                    }
 
                     if (baba.Health == 0)
-                    {
                         break;
-                    }
                 }
-
 
                 Thread.Sleep(100);
             }
+
             Console.SetCursorPosition(47, 20);
             Console.ForegroundColor = ConsoleColor.Red;
             DialogResult res = MessageBox.Show("GAME OVER!\nDo you want to start a new game?", "PoliticianCrusade", MessageBoxButtons.YesNo);
 
             if (res == DialogResult.Yes)
-            {
                 restartGame = true;
-            }
             else
-            {
                 Environment.Exit(0);
-            }
+
             Console.WriteLine("GAME OVER");
+        } 
+        #endregion
 
-        }
-
+        #region Update
         private static void UpdateResource(IEnumerable<IResource> allResources)
         {
             int newLiner = 0;
@@ -183,9 +180,30 @@ namespace PoliticianCrusade
                 Console.ForegroundColor = ConsoleColor.Gray;
 
                 Console.Write("{0, 3}", resource.RemainingPower);
-            }  
-        }
+            }
+        } 
+        #endregion
 
-       
+        #region IntroPlayer
+        public static void IntroPlayer(string stringWitPath)
+        {
+            //console init
+            Console.BufferHeight = Console.WindowHeight = 40;
+            Console.BufferWidth = Console.WindowWidth = 80;
+            Console.OutputEncoding = Encoding.Unicode;
+
+            using (StreamReader stream = new StreamReader(stringWitPath))
+            {
+                while (!stream.EndOfStream)
+                {
+                    Console.WriteLine(stream.ReadLine());
+                    Thread.Sleep(30);
+                }
+            }
+
+            Console.ReadKey();
+            Console.Clear();
+        } 
+        #endregion
     }
 }
