@@ -23,7 +23,15 @@ namespace PoliticianCrusade
             {
                 return this.Quantity;
             }
+
+            set { this.Quantity = value; }
         }
+
+        public int WearPerUse
+        {
+            get { return 0; }
+        }
+
         public ResourceType Type
         {
             get { return ResourceType.Payment; }

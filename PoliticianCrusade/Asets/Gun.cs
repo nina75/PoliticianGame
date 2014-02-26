@@ -21,7 +21,11 @@ namespace PoliticianCrusade
         {
             get { return ResourceType.Weapon; }
         }
-        
+
+        public int WearPerUse
+        {
+            get { return 100; }
+        }
 
         public int RemainingPower
         {

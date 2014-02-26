@@ -38,7 +38,7 @@ namespace PoliticianCrusade
             }
         }
 
-        public void ClearImg()
+        public void ClearImg(bool dead = false)
         {
             Console.SetCursorPosition(this.CoordX, this.CoordY);
             for (int i = 0; i < this.GetImage().GetLength(0); i++)
@@ -48,6 +48,13 @@ namespace PoliticianCrusade
 
                 Console.SetCursorPosition(this.CoordX, this.CoordY + i + 1);
             }
+
+            if (dead)
+            {
+                this.CoordX = 0;
+                this.CoordY = 0;
+            }
+
         } 
         #endregion
     }
